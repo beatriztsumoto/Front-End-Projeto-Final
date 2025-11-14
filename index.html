@@ -1,11 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Descontaí - Cupons de Desconto</title>
+    <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 <body>
-    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-top">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">🐷</div>
+                    <h1 class="logo-text">Descontaí</h1>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Procurar ofertas"
+                    >
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+
+                <!-- Saved Coupons -->
+                <button class="saved-coupons">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+                    </svg>
+                    <span>Cupons salvos</span>
+                </button>
+
+                <!-- Auth Buttons -->
+                <div class="auth-buttons">
+                    <button class="btn-login">LOGIN</button>
+                    <button class="btn-register">Cadastrar-se</button>
+                </div>
+            </div>
+
+            <!-- Secondary Navigation -->
+            <div class="header-bottom">
+                <button class="nav-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Informe seu CEP</span>
+                </button>
+
+                <button class="nav-button">
+                    <span>Categorias</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+
+                <button class="nav-button">
+                    <span>Lojas</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="page-title">Cupons de desconto: Destaques da Semana</h2>
+
+        <div class="coupons-grid">
+            <!-- Coupon Card 1 - Renner -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">RENNER</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom para você para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 8,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 2 - Adidas -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">adidas</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Adidas para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 3 - Mercado Livre -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">mercado livre</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Mercado Livre para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 4 - Shopee -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">shopee</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Shopee para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 5 - Amazon -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">amazon</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Amazon para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 6 - Zé Delivery -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">Zé Delivery</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Zé Delivery para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 8,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 7 - Bahia -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">BAHIA</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Bahia para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 8 - Nike -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">NIKE</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Nike para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 9 - O Boticário -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">O Boticário</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom O Boticário para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+
+            <!-- Coupon Card 10 - Magalu -->
+            <div class="coupon-card">
+                <div class="discount-badge">10%</div>
+                <div class="card-top">
+                    <div class="brand-logo">
+                        <span class="brand-text">magalu</span>
+                    </div>
+                    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="card-bottom">
+                    <p class="card-description">Cupom Magalu para comprar com 15% de desconto</p>
+                    <p class="card-cashback">+ até 6,5% de cashback</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
