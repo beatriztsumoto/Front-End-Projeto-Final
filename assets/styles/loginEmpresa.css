@@ -8,10 +8,15 @@ body {
 }
 
 .header {
-    padding: 80px;
+    padding: 50px;
     color: #00FFFF;
     font-size: 10px;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.13);
+}
+
+.logo-icon img {
+    width: 100px;
+    height: 100px;
 }
 
 .login-container {
