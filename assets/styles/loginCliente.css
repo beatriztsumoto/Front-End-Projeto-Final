@@ -189,7 +189,7 @@ input:focus {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.btn-cliente {
+.btn-loja {
     padding: 15px 40px;
     display: flex;
     margin-right: -250px;
@@ -211,12 +211,12 @@ input:focus {
     transform: translateY(-2px);
 }
 
-.btn-cliente {
+.btn-loja {
     background: var(--laranja-tangerina);
     color: var(--roxo-profundo);
 }
 
-.btn-cliente:hover {
+.btn-loja:hover {
     background: var(--laranja-tangerina);
     transform: translateY(-2px);
 }
@@ -245,7 +245,7 @@ input:focus {
     }
 
     .btn-voltar,
-    .btn-cliente {
+    .btn-loja {
         width: 100%;
     }
 
