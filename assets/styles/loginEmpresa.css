@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cores do projeto */
 :root {
     --ciano-eletrico: #00FFFF;
     --roxo-profundo: #6A0DAD;
@@ -127,7 +125,6 @@ input:focus {
     text-decoration: underline;
 }
 
-/* Buttons */
 .btn-entrar {
     width: 100%;
     padding: 18px;
@@ -148,7 +145,6 @@ input:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Register Link */
 .register-link {
     text-align: center;
     color: #555;
@@ -157,12 +153,12 @@ input:focus {
 
 .register-link a {
     color: var(--roxo-profundo);
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 600;
 }
 
 .register-link a:hover {
-    color: var(--rosa-choque);
+    text-decoration: underline;
 }
 
 .navigation-buttons {
@@ -170,6 +166,10 @@ input:focus {
     justify-content: space-between;
     margin-top: 30px;
     width: 150%;
+}
+
+.navigation-buttons a {
+    text-decoration: none;
 }
 
 .btn-voltar {
