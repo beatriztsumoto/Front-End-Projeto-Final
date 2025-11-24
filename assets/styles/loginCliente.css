@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
 
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cores do projeto */
 :root {
     --ciano-eletrico: #00FFFF;
     --roxo-profundo: #6A0DAD;
-    --rosa-choque: #FF1493;
+    --rosa-choque-suave: #FF69B4;
     --cinza-claro: #D9D9D9;
     --laranja-tangerina: #FFA500;
-    --amarelo-vibrante: #FFD700;
 }
 
 body {
@@ -34,16 +32,16 @@ body {
     position: relative;
 }
 
-/* Logo Section */
 .logo-section {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.logo-icon {
-    font-size: 60px;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+.logo-icon img{
+    text-align: center;
+    width: 100px;
+    
+    
 }
 
 .logo-text {
@@ -53,7 +51,6 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Form Card */
 .form-card {
     background: var(--cinza-claro);
     border-radius: 30px;
@@ -62,14 +59,13 @@ body {
 }
 
 .form-title {
-    color: var(--rosa-choque);
+    color: var(--rosa-choque-suave);
     font-size: 38px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
 }
 
-/* Input Groups */
 .input-group {
     margin-bottom: 25px;
 }
@@ -95,7 +91,6 @@ input:focus {
     background: #B0B0B0;
 }
 
-/* Form Options (Checkbox e Forgot Password) */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -133,7 +128,6 @@ input:focus {
     text-decoration: underline;
 }
 
-/* Buttons */
 .btn-entrar {
     width: 100%;
     padding: 18px;
@@ -154,7 +148,6 @@ input:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Register Link */
 .register-link {
     text-align: center;
     color: #555;
@@ -171,37 +164,36 @@ input:focus {
     color: var(--rosa-choque);
 }
 
-/* Navigation Buttons */
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    width: 150%;
 }
 
 .btn-voltar {
-    padding: 15px 40px;
+    padding: 15px 45px;
     display: flex;
-    margin-left: -250px;
+    margin-left: -500px;
     border: none;
     border-radius: 12px;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+    background: var(--laranja-tangerina);
+    color: var(--roxo-profundo);
 }
 .btn-loja {
     padding: 15px 40px;
     display: flex;
-    margin-right: -250px;
+    margin-right: -300px;
     border: none;
     border-radius: 12px;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.btn-voltar {
     background: var(--laranja-tangerina);
     color: var(--roxo-profundo);
 }
@@ -211,17 +203,11 @@ input:focus {
     transform: translateY(-2px);
 }
 
-.btn-loja {
-    background: var(--laranja-tangerina);
-    color: var(--roxo-profundo);
-}
-
 .btn-loja:hover {
     background: var(--laranja-tangerina);
     transform: translateY(-2px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .form-card {
         padding: 40px 30px;
@@ -235,7 +221,7 @@ input:focus {
         font-size: 28px;
     }
 
-    .logo-icon {
+    .logo-icon img{
         font-size: 50px;
     }
 
