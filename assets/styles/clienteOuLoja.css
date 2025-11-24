@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ciano-eletrico: #00FFFF;
+    --roxo-profundo: #6A0DAD;
+    --rosa-choque: #FF69B4;
+    --cinza-claro: #D9D9D9;
+    --laranja-tangerina: #FFA500;
+}
+
+body {
+    height: 100%;
+    font-family: 'Alexandria', sans-serif;
+    background-color:  var(--roxo-profundo);
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-section {
+    color: var(--ciano-eletrico);
+    margin-top: 100px;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1px;
+    margin-top: 15px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 150px;
+}
+
+.cliente-button {
+    display: flex;
+    width: 600px;
+    height: 80px;
+    background-color: var(--cinza-claro);
+    border-radius: 10px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    color: rgb(170, 170, 170);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.loja-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 80px;
+    background-color: var(--cinza-claro);
+    border-radius: 10px;
+    font-weight: 600;
+    color: rgb(170, 170, 170);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 123px;
+    height: 35px;
+    background-color: var(--laranja-tangerina);
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 31px;
+    margin-top: 180px;
+}
