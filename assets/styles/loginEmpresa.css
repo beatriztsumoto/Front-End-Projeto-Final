@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cores do projeto */
 :root {
     --ciano-eletrico: #00FFFF;
     --roxo-profundo: #6A0DAD;
@@ -127,7 +125,6 @@ input:focus {
     text-decoration: underline;
 }
 
-/* Buttons */
 .btn-entrar {
     width: 100%;
     padding: 18px;
@@ -148,7 +145,6 @@ input:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Register Link */
 .register-link {
     text-align: center;
     color: #555;
