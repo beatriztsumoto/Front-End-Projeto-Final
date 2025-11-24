@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,6 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
 header {
     background: linear-gradient(135deg, #8B2FC9 0%, #7328b8 100%);
     color: white;
@@ -34,21 +33,20 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* espaço entre a imagem e o texto */
+    gap: 0.5rem; 
 }
 
 .logo-img {
-    width: 40px;   /* ajuste conforme o tamanho da sua logo */
+    width: 40px;   
     height: auto;
 }
 
 .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffffff; /* ou a cor que você quiser */
+    color: #ffffff; 
 }
 
-/* Search */
 .search {
     flex: 1;
     min-width: 250px;
@@ -107,7 +105,6 @@ header {
     stroke-width: 2.5;
 }
 
-/* Buttons */
 .btn {
     padding: 0.75rem 1.5rem;
     border: none;
@@ -145,7 +142,6 @@ header {
     box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
-/* Header Bottom Navigation */
 .header-bottom {
     display: flex;
     gap: 2rem;
@@ -178,7 +174,6 @@ header {
     stroke-width: 2.5;
 }
 
-/* Main */
 main {
     max-width: 1400px;
     margin: 0 auto;
@@ -202,7 +197,7 @@ h2 {
     gap: 2rem;
 }
 
-/* Card */
+
 .card {
     background: white;
     border-radius: 20px;
@@ -304,7 +299,6 @@ h2 {
     background-clip: text;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     header {
         padding: 1.25rem;
