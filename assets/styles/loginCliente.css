@@ -39,8 +39,6 @@ body {
 .logo-icon img{
     text-align: center;
     width: 100px;
-    
-    
 }
 
 .logo-text {
@@ -155,12 +153,12 @@ input:focus {
 
 .register-link a {
     color: var(--roxo-profundo);
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 600;
 }
 
 .register-link a:hover {
-    color: var(--rosa-choque);
+    text-decoration: underline;
 }
 
 .navigation-buttons {
@@ -169,8 +167,11 @@ input:focus {
     margin-top: 30px;
     width: 150%;
 }
+.navigation-buttons a {
+    text-decoration: none;
+}
 
-.btn-voltar {
+.btn-voltar  {
     padding: 15px 45px;
     display: flex;
     margin-left: -500px;
@@ -183,6 +184,7 @@ input:focus {
     background: var(--laranja-tangerina);
     color: var(--roxo-profundo);
 }
+
 .btn-loja {
     padding: 15px 40px;
     display: flex;
