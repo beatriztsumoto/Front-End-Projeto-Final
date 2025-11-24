@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cores do projeto */
 :root {
     --ciano-eletrico: #00FFFF;
     --roxo-profundo: #6A0DAD;
@@ -34,7 +32,6 @@ body {
     position: relative;
 }
 
-/* Logo Section */
 .logo-section {
     text-align: center;
     margin-bottom: 50px;
@@ -53,7 +50,6 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Form Card */
 .form-card {
     background: var(--cinza-claro);
     border-radius: 30px;
@@ -69,7 +65,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* Input Groups */
 .input-group {
     margin-bottom: 25px;
 }
@@ -95,7 +90,6 @@ input:focus {
     background: #B0B0B0;
 }
 
-/* Form Options (Checkbox e Forgot Password) */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -133,7 +127,6 @@ input:focus {
     text-decoration: underline;
 }
 
-/* Buttons */
 .btn-entrar {
     width: 100%;
     padding: 18px;
@@ -154,7 +147,6 @@ input:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Register Link */
 .register-link {
     text-align: center;
     color: #555;
@@ -171,7 +163,6 @@ input:focus {
     color: var(--rosa-choque);
 }
 
-/* Navigation Buttons */
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
@@ -221,7 +212,6 @@ input:focus {
     transform: translateY(-2px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .form-card {
         padding: 40px 30px;
