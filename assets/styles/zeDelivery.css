@@ -200,7 +200,7 @@ main {
     z-index: 1;
 }
 
-.brand-magalulogo-large {
+.brand-zedeliverylogo-large {
     background: rgba(255, 255, 255, 0.1);
     padding: 1.5rem;
     border-radius: 20px;
@@ -208,7 +208,7 @@ main {
     border: 2px solid rgba(255, 215, 0, 0.3);
 }
 
-.brand-magalulogo-large img {
+.brand-zedeliverylogo-large img {
     width: 80px;
     height: auto;
     filter: brightness(0) invert(1);
