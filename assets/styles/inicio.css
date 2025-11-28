@@ -205,10 +205,10 @@ h2 {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
     position: relative;
-    display: flex; /* organiza o card como coluna flexível */
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 380px; /* altura fixa para cards em telas maiores (reduzida um pouco) */
+    height: 380px;
 }
 
 .card::before {
@@ -240,10 +240,9 @@ h2 {
 
 .card-header {
     background: linear-gradient(135deg, #00D4D4 0%, #00B8B8 100%);
-    /* altura maiorzinha para enfatizar a parte verde */
     height: 140px;
-    flex: 0 0 140px; /* garante que o header mantenha a altura no layout flex */
-    padding: 1rem; /* padding melhor encaixado com a nova altura */
+    flex: 0 0 140px;
+    padding: 1rem;
     text-align: center;
     color: white;
     font-size: 26px;
@@ -356,18 +355,19 @@ h2 {
     .btn-saved {
         padding: 0.75rem;
     }
-    /* cards responsivos em telas menores - deixa altura automática para evitar cortes / overflow */
+
     .card {
         height: auto;
     }
+
     .card-header {
-        /* manter um header grande, mas menor que a versão desktop */
         height: 120px;
         flex: 0 0 120px;
         padding: 1rem;
     }
+
     .card img {
-        max-width: 70px; /* imagens menores em telas médias */
+        max-width: 70px;
     }
 }
 
@@ -397,12 +397,14 @@ h2 {
         padding: 0.625rem 1.25rem;
         font-size: 13px;
     }
+
     .card-header {
         height: 90px;
         flex: 0 0 90px;
         padding: 0.75rem;
     }
+
     .card img {
-        max-width: 60px; /* imagens ainda menores em telas pequenas */
+        max-width: 60px; 
     }
 }
