@@ -15,9 +15,12 @@
 }
 
 body {
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Alexandria', sans-serif;
-    background-color:  var(--roxo-profundo);
+    background-color: var(--roxo-profundo);
     font-size: 24px;
 }
 
@@ -26,21 +29,29 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 95%;
+    max-width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .logo-section {
     color: var(--ciano-eletrico);
-    margin-top: 100px;
-    margin-bottom: 80px;
+    margin-top: 15px;
+    margin-bottom: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 1px;
-    margin-top: 15px;
 }
 
 .logo {
-    width: 100px;
+    width: 15vw; 
+    max-width: 120px;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.5em; 
 }
 
 .button-section {
@@ -48,12 +59,14 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 150px;
+    padding: 40px 0;
+    width: 100%;
 }
 
-.cliente-button {
+.cliente-button, .loja-button {
     display: flex;
-    width: 600px;
+    width: 90%; 
+    max-width: 600px; 
     height: 80px;
     background-color: var(--cinza-claro);
     border-radius: 10px;
@@ -63,24 +76,15 @@ body {
     color: rgb(170, 170, 170);
     cursor: pointer;
     text-decoration: none;
-}
-
-.loja-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 600px;
-    height: 80px;
-    background-color: var(--cinza-claro);
-    border-radius: 10px;
-    font-weight: 600;
-    color: rgb(170, 170, 170);
-    cursor: pointer;
     transition: background-color 0.3s ease;
-    text-decoration: none;
 }
 
 .back-button {
+    /* Posição Corrigida: Fixo no canto inferior esquerdo */
+    position: fixed; 
+    bottom: 20px; 
+    left: 20px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,6 +95,27 @@ body {
     font-weight: 600;
     text-decoration: none;
     font-size: 16px;
-    margin-left: 31px;
-    margin-top: 180px;
+    color: white; 
+    margin: 0; 
+}
+
+/* 📱 Media Query para Telas Muito Pequenas (Ex: Celulares) */
+@media (max-width: 480px) {
+    body {
+        font-size: 20px; 
+    }
+
+    .logo {
+        width: 20vw;
+        max-width: 100px;
+    }
+
+    .cliente-button, .loja-button {
+        height: 60px;
+    }
+
+    .button-section {
+        gap: 15px;
+        padding: 20px 0;
+    }
 }
