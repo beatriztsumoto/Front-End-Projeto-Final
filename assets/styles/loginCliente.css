@@ -233,8 +233,7 @@ input:focus {
         gap: 15px;
     }
 
-    .btn-voltar{
-        /* position: fixed;  */
+    .btn-voltar {
         bottom: 20px; 
         left: 20px;
         display: flex;
