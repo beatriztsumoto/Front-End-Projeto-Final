@@ -10,7 +10,6 @@ body {
     min-height: 100vh;
 }
 
-/* ===== HEADER ===== */
 header {
     background: linear-gradient(135deg, #8B2FC9 0%, #7328b8 100%);
     color: white;
@@ -164,14 +163,12 @@ header {
     transform: translateY(-1px);
 }
 
-/* ===== MAIN ===== */
 main {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 1.5rem 3rem;
 }
 
-/* ===== BRAND HERO ===== */
 .brand-hero {
     background: linear-gradient(135deg, #FFD700 0%, #FFD700 100%);
     border-radius: 24px;
@@ -255,7 +252,6 @@ main {
     margin-top: 0.25rem;
 }
 
-/* ===== SECTIONS ===== */
 .section-header {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -279,7 +275,6 @@ main {
     margin: 3rem 0;
 }
 
-/* ===== FEATURED CARD ===== */
 .featured-card {
     background: linear-gradient(135deg, #FFD700 0%, #FFD700 100%);
     border-radius: 24px;
@@ -397,7 +392,6 @@ main {
     box-shadow: 0 8px 28px rgba(255, 215, 0, 0.5);
 }
 
-/* ===== COUPONS GRID ===== */
 .section-coupons {
     margin: 4rem 0;
 }
@@ -543,7 +537,6 @@ main {
     box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
-/* ===== HOW TO ===== */
 .section-howto {
     margin: 4rem 0;
 }
@@ -592,7 +585,6 @@ main {
     font-size: 14px;
 }
 
-/* ===== ABOUT ===== */
 .section-about {
     margin: 4rem 0;
 }
@@ -645,7 +637,6 @@ main {
     font-size: 14px;
 }
 
-/* ===== BACK BUTTON ===== */
 .btn-back {
     display: flex;
     align-items: center;
@@ -671,7 +662,6 @@ main {
     box-shadow: 0 8px 28px rgba(139, 47, 201, 0.4);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
         padding: 1.25rem;

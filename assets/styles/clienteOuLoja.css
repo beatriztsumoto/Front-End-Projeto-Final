@@ -80,7 +80,6 @@ body {
 }
 
 .back-button {
-    /* Posição Corrigida: Fixo no canto inferior esquerdo */
     position: fixed; 
     bottom: 20px; 
     left: 20px;
@@ -99,7 +98,6 @@ body {
     margin: 0; 
 }
 
-/* 📱 Media Query para Telas Muito Pequenas (Ex: Celulares) */
 @media (max-width: 480px) {
     body {
         font-size: 20px; 
