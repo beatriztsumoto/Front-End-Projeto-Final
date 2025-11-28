@@ -45,7 +45,8 @@ body {
     color: var(--ciano-eletrico);
     font-size: 36px;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+    text-decoration: none;
 }
 
 .form-card {
@@ -220,6 +221,7 @@ input:focus {
 
     .logo-text {
         font-size: 28px;
+    
     }
 
     .logo-icon img{
@@ -232,7 +234,7 @@ input:focus {
     }
 
     .btn-voltar{
-        position: fixed; 
+        /* position: fixed;  */
         bottom: 20px; 
         left: 20px;
         display: flex;

@@ -7,7 +7,11 @@
 }
 
 body {
+
     font-family: "alexandria";
+
+    font-family: "Alexandria", Arial, sans-serif;
+
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     min-height: 100vh;
 }
