@@ -63,6 +63,12 @@ body {
     width: 100%;
 }
 
+.cliente-button:hover, .loja-button:hover {
+    background-color: #ebebeb;
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(77, 75, 75, 0.4);
+}
+
 .cliente-button, .loja-button {
     display: flex;
     width: 90%; 
@@ -76,11 +82,10 @@ body {
     color: rgb(170, 170, 170);
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .back-button {
-    /* Posição Corrigida: Fixo no canto inferior esquerdo */
     position: fixed; 
     bottom: 20px; 
     left: 20px;
@@ -95,11 +100,16 @@ body {
     font-weight: 600;
     text-decoration: none;
     font-size: 16px;
-    color: white; 
+    color: var(--roxo-profundo); 
     margin: 0; 
+    transition: background-color 0.25s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* 📱 Media Query para Telas Muito Pequenas (Ex: Celulares) */
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(77, 75, 75, 0.4);
+}
+
 @media (max-width: 480px) {
     body {
         font-size: 20px; 

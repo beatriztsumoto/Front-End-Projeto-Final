@@ -172,19 +172,30 @@ input:focus {
     text-decoration: none;
 }
 
-.btn-voltar {
-    padding: 15px 40px;
+.btn-voltar{
+    position: fixed; 
+    bottom: 20px; 
+    left: 20px;
     display: flex;
-    margin-left: -500px;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: var(--laranja-tangerina);
-    color: var(--roxo-profundo);
+    align-items: center;
+    justify-content: center;
+    width: 123px;
+    height: 35px;
+    background-color: var(--laranja-tangerina);
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--roxo-profundo); 
+    margin: 0; 
+    transition: background-color 0.25s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
+
+.btn-voltar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(77, 75, 75, 0.4);
+}
+
 .btn-cliente {
     padding: 15px 40px;
     display: flex;
