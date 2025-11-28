@@ -85,29 +85,26 @@ span {
 }
 
 .btn-saved {
-    background: transparent;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.25rem;
-    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     color: white;
-    font-family: 'Alexandria', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
     backdrop-filter: blur(10px);
-    text-shadow: 0 3px 10px rgba(49, 48, 48, 0.6);
 }
 
 .btn-saved:hover {
     background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-saved svg {
-    stroke-width: 2.5;
 }
 
 .btn {
@@ -118,34 +115,33 @@ span {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
+    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .btn-login {
     background: transparent;
-    color: #FF69B4;
-    text-shadow: 0 3px 10px rgba(49, 48, 48, 0.6);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-login:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
 
 .btn-register {
-    font-family: 'Alexandria', sans-serif;
-    background-color: #ffa500;
-    color: #6A0DAD;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #000;
     border: none;
-    box-shadow: 0 4px 12px rgba(104, 104, 104, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .btn-register:hover {
-    background-color: #ffc14e;
+    background: linear-gradient(135deg, #FFC700 0%, #FF8C00 100%);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(77, 75, 75, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
 .header-bottom {

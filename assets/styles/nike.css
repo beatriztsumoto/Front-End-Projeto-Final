@@ -53,6 +53,7 @@ span {
 .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #00ffff;
     color: #00FFFF;
     text-shadow: 0 3px 10px rgba(49, 48, 48, 0.6);
 }
@@ -237,6 +238,13 @@ main {
     gap: 3rem;
     position: relative;
     z-index: 1;
+}
+
+.logo-text2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 0 3px 10px rgba(49, 48, 48, 0.6);
 }
 
 .brand-nikelogo-large {
