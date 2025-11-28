@@ -36,6 +36,17 @@
                     </div>
                     <a href="#" class="forgot-password">Esqueceu a senha?</a>
                 </div>
+                <div class="popup-overlay" id="popupOverlay">
+                    <div class="popup-content">
+                        <h2 class="popup-title">Recuperar Senha</h2>
+                        <p class="popup-text">
+                            Enviamos as instruções de mudança de senha para 
+                            <span class="popup-email">amazon@gmail.com</span>. 
+                            Verifique sua caixa de entrada e de spam.
+                        </p>
+                        <button class="btn-ok" id="btnOk">OK</button>
+                    </div>
+                </div>
                 
                 <!-- fazer o script -->
                 <a href="../pages/inicio.html"> 
@@ -59,3 +70,25 @@
     </div>
 </body>
 </html>
+
+<script>
+    const esqueceuSenha = document.querySelector('.forgot-password');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const btnOk = document.getElementById('btnOk');
+
+    esqueceuSenha.addEventListener('click', function(e) {
+        e.preventDefault();
+        popupOverlay.classList.add('active');
+    });
+
+    btnOk.addEventListener('click', function() {
+        popupOverlay.classList.remove('active');
+    });
+
+    popupOverlay.addEventListener('click', function(e) {
+        if (e.target === popupOverlay) {
+            popupOverlay.classList.remove('active');
+        }
+    });
+
+</script>
