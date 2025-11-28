@@ -144,6 +144,7 @@ span {
     box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
+
 .header-bottom {
     display: flex;
     gap: 2rem;
@@ -209,6 +210,7 @@ h2 {
     flex-direction: column;
     justify-content: flex-start;
     height: 380px;
+    text-decoration: none;
 }
 
 .card::before {
@@ -484,7 +486,9 @@ h2 {
 .btn-pronto:active {
     transform: translateY(0);
 
-/*footer*/
+}
+
+
 .main-footer {
     background-color: #6A0DAD;
     color: #fff;
