@@ -10,13 +10,11 @@
 <header>
         <div class="container">
             <div class="header-top">
-                <div class="logo">
+               <div class="logo">
                     <a href="../pages/inicio.html">
                     <img src="../img/logo.png" alt="Descontaí Logo" class="logo-img">
                     </a>
-                    <a href="./inicio.html">
                     <span class="logo-text">Descontaí</span>
-                    </a>
                 </div>
                 
                 
@@ -25,29 +23,40 @@
                 </div>
 
                 <button class="btn-saved">
-                  
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+                    </svg>
                     <span>Cupons salvos</span>
                 </button>
                 <a href="../pages/loginCliente.html">
-                    <button class="btn btn-login">LOGIN</button>
+
+                    <button class="btn btn-login"><strong>LOGIN</strong></button>
                 </a>
-                <a href="../pages/clienteOuLoja.html">
+                <a href="clienteOuLoja.html">
+
                     <button class="btn btn-register">Cadastrar-se</button>
                 </a>            </div>
             <div class="header-bottom">
                 <button class="nav-btn">
-                   
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
                     <span>Informe seu CEP</span>
                 </button>
 
                 <button class="nav-btn">
                     <span>Categorias</span>
-                    
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </button>
 
                 <button class="nav-btn">
                     <span>Lojas</span>
-                   
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -114,7 +123,7 @@
 
         <section class="section-coupons">
             <div class="section-header">
-                <h2>✨ Cupons Disponíveis</h2>
+                <h2>Cupons Disponíveis</h2>
                 <span class="section-subtitle">Escolha o melhor desconto para você</span>
             </div>
 
@@ -222,7 +231,7 @@
 
         <section class="section-howto">
             <div class="section-header">
-                <h2>📋 Como Usar os Cupons</h2>
+                <h2>Como Usar os Cupons</h2>
                 <span class="section-subtitle">Siga esses passos simples</span>
             </div>
 
@@ -284,5 +293,47 @@
         </button>
         </a>
     </main>
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-section navigation-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cupons Salvos</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Cadastrar-se</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter-contact">
+                <h4>Fale Conosco</h4>
+                <p>📍 Rua Jacitaba, 253, Bairro do Limoeiro - São Paulo/SP</p>
+                <p>📧 <a href="mailto:contato@exemplo.com">contato@devision.com</a></p>
+                <p>📞 (11) 3291-0578</p>
+            </div>
+            
+            <div>   
+                <h4 style="margin-top: 15px;">Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <button type="submit"><a href="../pages/clienteOuLoja.html"></a>Inscrever-se</button>
+                </form>
+            </div>
+
+
+                
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Devision. Todos os direitos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Política de Privacidade</a> | 
+                <a href="#">Termos de Serviço</a> | 
+                <a href="#">Troca e Devolução</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
