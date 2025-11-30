@@ -225,8 +225,73 @@ span {
 }
 
 .categorias-dropdown > div:hover {
-  background: #ff0080; 
+  background: #ff4fa3; 
   color: white;
+  border-radius: 6px;
+}
+
+.dropdown-lojas {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 260px;
+  background: rgba(255, 105, 180, 0.45);
+  border-radius: 8px;
+  padding: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: none; /* começa escondido */
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
+}
+
+.menu-lojas-container:hover .dropdown-lojas {
+  display: block;
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
+
+/* input de busca */
+#input-busca-lojas {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.menu-lojas-container {
+  position: relative; 
+}
+
+#input-busca-lojas::placeholder {
+  color: black;
+}
+
+#lista-lojas li {
+  color: black;
+  padding: 10px 8px; /* aumenta o espaço interno */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+}
+
+#lista-lojas li:hover {
+  background-color: #ff4fa3; /* rosa */
+  color: white;
+  cursor: pointer;
+}
+
+#input-busca-lojas:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 main {

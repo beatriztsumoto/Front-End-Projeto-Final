@@ -48,4 +48,59 @@ async function carregarCategorias() {
   });
 }
 
+import { buscarLojasPorNome } from "./lojas.js";
+
+const dropdownLojas = document.getElementById("dropdown-lojas");
+const inputBuscaLojas = document.getElementById("input-busca-lojas");
+const listaLojas = document.getElementById("lista-lojas");
+const btnLojas = document.getElementById("btn-lojas");
+
+// Abre/Fecha dropdown lojas
+btnLojas.addEventListener("click", () => {
+  dropdownLojas.classList.toggle("show");
+});
+
+// Buscar enquanto digita
+inputBuscaLojas.addEventListener("input", async () => {
+  const termo = inputBuscaLojas.value.trim();
+
+  if (termo.length < 2) {
+    listaLojas.innerHTML = "<li>Digite ao menos 2 caracteres</li>";
+  }
+
+  try {
+    const lojas = await buscarLojasPorNome(termo);
+    preencherListaLojas(lojas);
+  } catch (error) {
+    listaLojas.innerHTML = "<li>Erro ao buscar lojas</li>";
+  }
+});
+
+function preencherListaLojas(lojas) {
+  listaLojas.innerHTML = "";
+
+  if (!lojas || lojas.length === 0) {
+    listaLojas.innerHTML = "<li>Nenhuma loja encontrada</li>";
+    return;
+  }
+
+  function preencherListaLojas(lojas) {
+    listaLojas.innerHTML = "";
+
+    if (!lojas || lojas.length === 0) {
+      listaLojas.innerHTML = "<li>Nenhuma loja encontrada</li>";
+      return;
+    }
+  }
+
+  lojas.forEach(loja => {
+    const li = document.createElement("li");
+
+  li.innerHTML = `<img src="${loja.LOGO || ''}" class="logo-loja">
+    <span>${loja.NOME_FANTASIA}</span>`;
+    li.textContent = loja.NOME_FANTASIA;
+    listaLojas.appendChild(li);
+  });
+}
+
 carregarCategorias();
