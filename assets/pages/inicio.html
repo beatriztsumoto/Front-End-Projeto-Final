@@ -107,20 +107,30 @@
 
             <div id="lista-categorias" class="categorias-dropdown"></div>
           </div>
+          <div class="menu-lojas-container">
+            <button id="btn-lojas" class="nav-btn">
+              <span>Lojas</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
 
-          <button class="nav-btn">
-            <span>Lojas</span>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
+            <div id="dropdown-lojas" class="dropdown-lojas">
+              <input
+                type="text"
+                id="input-busca-lojas"
+                placeholder="Buscar lojas...">
+
+                <ul id="lista-lojas"></ul>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -275,7 +285,7 @@
           <form class="newsletter-form">
             <input type="email" placeholder="Seu e-mail" required />
             <button type="submit">
-              <a href="../pages/clienteOuLoja.html"></a>Inscrever-se
+              <a href="../pages/clienteOuLoja.html">Inscrever-se</a>
             </button>
           </form>
         </div>
@@ -290,6 +300,6 @@
         </div>
       </div>
     </footer>
-    <script src="/assets/scripts/inicio.js"></script>
+    <script type="module" src="/assets/scripts/inicio.js"></script>
   </body>
 </html>
