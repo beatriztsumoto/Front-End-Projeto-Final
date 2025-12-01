@@ -29,6 +29,8 @@ body {
     width: 100%;
     max-width: 700px;
     position: relative;
+    margin: 0 auto;
+    padding: 0 16px; /* garante espaçamento lateral em telas pequenas */
 }
 
 .logo-section {
@@ -37,8 +39,10 @@ body {
 }
 
 .logo-icon img{
-    text-align: center;
     width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .logo-text {
@@ -54,6 +58,8 @@ body {
     border-radius: 30px;
     padding: 50px 70px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .form-title {
@@ -166,7 +172,8 @@ input:focus {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    width: 150%;
+    width: 100%;
+    gap: 16px;
 }
 .navigation-buttons a {
     text-decoration: none;
@@ -175,7 +182,7 @@ input:focus {
 .btn-voltar  {
     padding: 15px 45px;
     display: flex;
-    margin-left: -500px;
+    margin: 0;
     border: none;
     border-radius: 12px;
     font-size: 18px;
@@ -184,12 +191,14 @@ input:focus {
     transition: all 0.3s ease;
     background: var(--laranja-tangerina);
     color: var(--roxo-profundo);
+    flex: 1 1 45%;
+    justify-content: center;
 }
 
 .btn-loja {
     padding: 15px 40px;
     display: flex;
-    margin-right: -300px;
+    margin: 0;
     border: none;
     border-radius: 12px;
     font-size: 18px;
@@ -198,27 +207,15 @@ input:focus {
     transition: all 0.3s ease;
     background: var(--laranja-tangerina);
     color: var(--roxo-profundo);
+    flex: 1 1 45%;
+    justify-content: center;
 }
 
 .btn-voltar:hover {
     background: var(--laranja-tangerina);
     transform: translateY(-2px);
 }
-
-.btn-loja:hover {
-    background: var(--laranja-tangerina);
-    transform: translateY(-2px);
-}
-
 @media (max-width: 768px) {
-    .form-card {
-        padding: 40px 30px;
-    }
-
-    .form-title {
-        font-size: 30px;
-    }
-
     .logo-text {
         font-size: 28px;
     
@@ -358,3 +355,31 @@ input:focus {
     background: #d97706;
     transform: translateY(-2px);
 }
+
+    /* regras adicionais para 768 já estão abertas acima (evita duplicação) */
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 26px;
+    }
+
+    .form-title {
+        font-size: 26px;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navigation-buttons button {
+        width: 100%;
+    }
+
+    .form-options {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
