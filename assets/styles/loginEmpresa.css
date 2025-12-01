@@ -30,200 +30,7 @@ body {
     max-width: 700px;
     position: relative;
     margin: 0 auto;
-    padding: 0 16px; /* garante espaçamento lateral em telas pequenas */
-}
-
-.logo-section {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.logo-icon img{
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.logo-text {
-    color: var(--ciano-eletrico);
-    font-size: 36px;
-    font-weight: 700;
-    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-    text-decoration: none;
-}
-
-.form-card {
-    background: var(--cinza-claro);
-    border-radius: 30px;
-    padding: 50px 70px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.form-title {
-    color: var(--rosa-choque-suave);
-    font-size: 38px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.input-group {
-    margin-bottom: 25px;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 18px 24px;
-    border: none;
-    border-radius: 15px;
-    background: #C0C0C0;
-    font-size: 16px;
-    color: #666;
-    outline: none;
-    transition: background 0.3s ease;
-}
-
-input::placeholder {
-    color: #888;
-}
-
-input:focus {
-    background: #B0B0B0;
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0 30px 0;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-group input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-    accent-color: var(--roxo-profundo);
-}
-
-.checkbox-group label {
-    color: #333;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.forgot-password {
-    color: var(--roxo-profundo);
-    font-size: 15px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.btn-entrar {
-    width: 100%;
-    padding: 18px;
-    background: #A8A8A8;
-    border: none;
-    border-radius: 15px;
-    color: #333;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 20px;
-}
-
-.btn-entrar:hover {
-    background: #989898;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.register-link {
-    text-align: center;
-    color: #555;
-    font-size: 15px;
-}
-
-.register-link a {
-    color: var(--roxo-profundo);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link a:hover {
-    text-decoration: underline;
-}
-
-.navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    width: 100%;
-    gap: 16px;
-}
-.navigation-buttons a {
-    text-decoration: none;
-}
-
-.btn-voltar  {
-    padding: 15px 45px;
-    display: flex;
-    margin: 0;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: var(--laranja-tangerina);
-    color: var(--roxo-profundo);
-    flex: 1 1 45%;@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --ciano-eletrico: #00FFFF;
-    --roxo-profundo: #6A0DAD;
-    --rosa-choque-suave: #FF69B4;
-    --cinza-claro: #D9D9D9;
-    --laranja-tangerina: #FFA500;
-}
-
-body {
-    font-family: "Alexandria", Arial, sans-serif;
-    background: linear-gradient(135deg, #7B1FA2 0%, #6A0DAD 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    position: relative;
-}
-
-.container {
-    width: 100%;
-    max-width: 700px;
-    position: relative;
-    margin: 0 auto;
-    padding: 0 16px; /* garante espaçamento lateral em telas pequenas */
+    padding: 0 16px; 
 }
 
 .logo-section {
@@ -460,7 +267,7 @@ input:focus {
         box-shadow: 0 6px 20px rgba(77, 75, 75, 0.4);
     }
 
-    .btn-loja {
+    .btn-cliente {
         width: 100%;
     }
 
@@ -589,10 +396,9 @@ input:focus {
         align-items: flex-start;
     }
 }
-    justify-content: center;
-}
+    
 
-.btn-loja {
+.btn-cliente {
     padding: 15px 40px;
     display: flex;
     margin: 0;
@@ -613,7 +419,7 @@ input:focus {
     transform: translateY(-2px);
 }
 
-.btn-loja:hover {
+.btn-cliente:hover {
     background: var(--laranja-tangerina);
     transform: translateY(-2px);
 }
@@ -664,7 +470,7 @@ input:focus {
         box-shadow: 0 6px 20px rgba(77, 75, 75, 0.4);
     }
 
-    .btn-loja {
+    .btn-cliente {
         width: 100%;
     }
 
