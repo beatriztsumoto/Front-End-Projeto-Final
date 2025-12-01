@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Descontaí - Cupons Salvos</title>
-    <link rel="stylesheet" href="../styles/cuponsSalvos.css" />
+    <title>Descontaí - Cupons e Descontos</title>
+    <link rel="stylesheet" href="/assets/styles/cuponsSalvos.css" />
   </head>
-
   <body>
-    <!-- HEADER -->
     <header>
       <div class="container">
         <div class="header-top">
@@ -40,15 +38,14 @@
                 d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"
               ></path>
             </svg>
-            <span>Cupons salvos</span>
+            <span>Cupons salvos
+              <link rel="stylesheet" href="./assets/pages/cuponsSalvos.html">
+            </span>
           </button>
-          <div class="perfil">
-            <img src="../img/perfil.jpg" alt="Foto Perfil Usuario" />
-          </div>
+        
         </div>
-
         <div class="header-bottom">
-          <button class="nav-btn">
+          <button class="nav-btn" id="btn-cep">
             <svg
               width="16"
               height="16"
@@ -62,9 +59,80 @@
             </svg>
             <span>Informe seu CEP</span>
           </button>
+          <div class="popup-overlay" id="popup-cep" style="display: none">
+            <div class="popup-container">
+              <svg
+                class="popup-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  fill="#FFA500"
+                />
+              </svg>
 
-          <button class="nav-btn">
-            <span>Categorias</span>
+              <h2 class="popup-title">Informe seu CEP:</h2>
+
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="input-cep"
+                  placeholder="CEP"
+                  maxlength="9"
+                />
+              </div>
+
+              <button class="btn-pronto">PRONTO</button>
+            </div>
+          </div>
+          <div class="menu-categorias-container">
+            <button id="btn-categorias" class="nav-btn">
+              <span>Categorias</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div id="lista-categorias" class="categorias-dropdown"></div>
+          </div>
+          <div class="menu-lojas-container">
+            <button id="btn-lojas" class="nav-btn">
+              <span>Lojas</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div id="dropdown-lojas" class="dropdown-lojas">
+              <input
+                type="text"
+                id="input-busca-lojas"
+                placeholder="Buscar lojas..."
+              />
+
+              <ul id="lista-lojas"></ul>
+            </div>
+          </div>
+
+          <a href="./cupons.html">
+            <button id="btn-cupons" class="nav-btn">
+              <span>Cupons</span>
             <svg
               width="16"
               height="16"
@@ -72,44 +140,47 @@
               fill="none"
               stroke="currentColor"
               stroke-width="2"
-            >
+              >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
-
-          <button class="nav-btn">
-            <span>Lojas</span>
+        </a>
+          
+        <a href="descontos.html">
+          <button id="btn-descontos" class="nav-btn">
+            <span>Descontos</span>
             <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
             >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </a>
         </div>
       </div>
     </header>
 
-    <!-- MAIN -->
     <main>
-      <div class="content-wrapper">
-        <h2 class="titulo">Meus cupons</h2>
+        <h2 class="tituloCupons">Meus Cupons</h2>
+      
+        <div class="grid" id="lista-cupons">
+        </div>
+      </main>
 
-
-    </main>
     <footer class="main-footer">
       <div class="footer-container">
         <div class="footer-section navigation-links">
           <h4>Navegação</h4>
           <ul>
-            <li><a href="/index.html">Início</a></li>
-            <li><a href="./cuponsSalvos.html">Cupons Salvos</a></li>
-            <li><a href="../pages/loginCliente.html">Login</a></li>
-            <li><a href="../pages/clienteOuLoja.html">Cadastrar-se</a></li>
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./assets/pages/cuponsSalvos.html">Cupons Salvos</a></li>
+            <li><a href="./assets/pages/loginCliente.html">Login</a></li>
+            <li><a href="./assets/pages/cadastroCliente.html">Cadastrar-se</a></li>
           </ul>
         </div>
 
@@ -117,7 +188,7 @@
           <h4>Fale Conosco</h4>
           <p>📍 Rua Jacitaba, 253, Bairro do Limoeiro - São Paulo/SP</p>
           <p>
-            📧 <a href="mailto:contato@devision.com">contato@devision.com</a>
+            📧 <a href="mailto:contato@exemplo.com">contato@devision.com</a>
           </p>
           <p>📞 (11) 3291-0578</p>
         </div>
@@ -134,7 +205,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 DeVision. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Devision. Todos os direitos reservados.</p>
         <div class="legal-links">
           <a href="#">Política de Privacidade</a> |
           <a href="#">Termos de Serviço</a> |
@@ -142,5 +213,6 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="/assets/scripts/index.js"></script>
   </body>
 </html>
