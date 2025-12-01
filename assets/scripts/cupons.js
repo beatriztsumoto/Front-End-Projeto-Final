@@ -46,6 +46,11 @@ async function carregarCategorias() {
     const item = document.createElement("div");
     item.classList.add("categoria-item");
     item.textContent = categoria;
+
+    item.addEventListener("click", () => {
+      window.location.href = `/assets/pages/lojaPorCategoria.html?categaria=${encodeURIComponent(categoria)}`
+    })
+
     listaCategorias.appendChild(item);
   });
 }
@@ -87,16 +92,18 @@ function preencherListaLojas(lojas) {
   lojas.forEach((loja) => {
     const li = document.createElement("li");
 
-    li.innerHTML = `<img src="${loja.LOGO || ""}" class="logo-loja">
-    <span>${loja.NOME_FANTASIA}</span>`;
     li.textContent = loja.NOME_FANTASIA;
+
+    li.addEventListener("click", () => {
+      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`
+    });
+
     listaLojas.appendChild(li);
   });
 }
 
 const btnEndereco = document.getElementById("btn-endereco");
 const dropdownEndereco = document.getElementById("dropdown-endereco");
-// 🎯 CORREÇÃO 2: ID DA LISTA AGORA É "lista-endereco"
 const listaEndereco = document.getElementById("lista-endereco");
 const inputBuscaEndereco = document.getElementById("input-busca-endereco");
 
