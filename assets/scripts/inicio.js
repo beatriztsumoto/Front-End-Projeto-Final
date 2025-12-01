@@ -93,10 +93,10 @@ function preencherListaLojas(lojas) {
     }
   }
 
-  lojas.forEach(loja => {
+  lojas.forEach((loja) => {
     const li = document.createElement("li");
 
-  li.innerHTML = `<img src="${loja.LOGO || ''}" class="logo-loja">
+    li.innerHTML = `<img src="${loja.LOGO || ""}" class="logo-loja">
     <span>${loja.NOME_FANTASIA}</span>`;
     li.textContent = loja.NOME_FANTASIA;
     listaLojas.appendChild(li);

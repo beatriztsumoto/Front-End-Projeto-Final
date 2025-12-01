@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupons e Descontos - Descontaí</title>
+    <link rel="stylesheet" href="../styles/paginaLojas.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-top">
+          <div class="logo">
+            <a href="../pages/inicio.html">
+              <img
+                src="../img/logo.png"
+                alt="Descontaí Logo"
+                class="logo-img"
+              />
+            </a>
+            <a href="./inicio.html">
+              <span class="logo-text">Descontaí</span>
+            </a>
+          </div>
+
+          <div class="search">
+            <input type="text" placeholder="Procurar ofertas" />
+          </div>
+
+          <button class="btn-saved">
+            <span>Cupons salvos</span>
+          </button>
+          <a href="../pages/loginCliente.html">
+            <button class="btn btn-login">LOGIN</button>
+          </a>
+          <a href="../pages/clienteOuLoja.html">
+            <button class="btn btn-register">Cadastrar-se</button>
+          </a>
+        </div>
+        <div class="header-bottom">
+          <button class="nav-btn">
+            <span>Informe seu CEP</span>
+          </button>
+
+          <button class="nav-btn">
+            <span>Categorias</span>
+          </button>
+
+          <button class="nav-btn">
+            <span>Lojas</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="brand-hero">
+        <div class="brand-hero-content">
+          <div class="logo-loja">
+            <span id="loja-nome" class="logo-text"></span>
+          </div>
+        </div>
+        <div class="brand-hero-info">
+          <h1 id="loja-title"></h1>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Ofertas Ativas</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">6%</span>
+              <span class="stat-label">Cashback</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">80%</span>
+              <span class="stat-label">Desconto Máx.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section-featured">
+        <div class="section-header">
+          <h2>🔥 Cupom em Destaque</h2>
+          <span class="section-subtitle">A melhor oferta do momento</span>
+        </div>
+
+        <div class="featured-card">
+          <div class="featured-badge">MAIS POPULAR</div>
+          <div class="featured-content">
+            <div class="featured-discount">
+              <img
+                id="featured-logo"
+                class="featured-logo"
+                src=""
+                alt="Logo da loja"
+              />
+            </div>
+            <div class="featured-info">
+              <h3 id="featured-title"></h3>
+              <p id="featured-description"></p>
+              <div class="featured-benefits">
+                <span class="benefit-tag">✓ Frete Grátis</span>
+                <span class="benefit-tag">✓ Cashback</span>
+                <span class="benefit-tag">✓ Sem Mínimo</span>
+              </div>
+            </div>
+            <button class="btn-featured">
+              <span>ATIVAR CUPOM</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-descontos">
+        <div class="section-header">
+          <h2>✨ Descontos Disponíveis</h2>
+          <span class="section-subtitle"
+            >Escolha o melhor desconto para você</span
+          >
+        </div>
+
+        <div id="descontos-grid" class="descontos-grid"></div>
+      </section>
+
+      <section class="section-coupons">
+        <div class="section-header">
+          <h2>✨ Cupons Disponíveis</h2>
+          <span class="section-subtitle">Escolha o melhor cupom para você</span>
+        </div>
+
+        <div class="coupons-grid"></div>
+      </section>
+
+      <section class="section-howto">
+        <div class="section-header">
+          <h2>📋 Como Usar os Cupons</h2>
+          <span class="section-subtitle">Siga esses passos simples</span>
+        </div>
+
+        <div class="howto-grid">
+          <div class="howto-card">
+            <div
+              class="howto-icon"
+              style="
+                background: linear-gradient(135deg, #ff6b9d 0%, #c92a6f 100%);
+              "
+            ></div>
+            <h3>1. Escolha o Cupom</h3>
+            <p>
+              Navegue pelos cupons disponíveis e escolha o que melhor se encaixa
+              na sua compra
+            </p>
+          </div>
+
+          <div class="howto-card">
+            <div
+              class="howto-icon"
+              style="
+                background: linear-gradient(135deg, #00d4d4 0%, #0099a8 100%);
+              "
+            ></div>
+            <h3>2. Copie o Código</h3>
+            <p>Clique em "Ver Oferta" para copiar o código automaticamente</p>
+          </div>
+
+          <div class="howto-card">
+            <div
+              class="howto-icon"
+              style="
+                background: linear-gradient(135deg, #8b2fc9 0%, #5f1b8c 100%);
+              "
+            ></div>
+            <h3>3. Finalize a Compra</h3>
+            <p>Cole o código no carrinho e aproveite seu desconto + cashback</p>
+          </div>
+        </div>
+      </section>
+
+      <a href="../pages/inicio.html">
+        <button class="btn-back">Voltar para Lojas</button>
+      </a>
+    </main>
+
+    <script type="module" src="/assets/scripts/paginaLojas.js"></script>
+  </body>
+</html>

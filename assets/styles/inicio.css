@@ -203,9 +203,9 @@ span {
 }
 
 .menu-categorias-container:hover .categorias-dropdown {
-    opacity: 1;
-    transform: translateY(0px);
-    pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
 }
 
 .menu-categorias-container:hover + .categorias-dropdown {
@@ -225,7 +225,7 @@ span {
 }
 
 .categorias-dropdown > div:hover {
-  background: #ff4fa3; 
+  background: #ff4fa3;
   color: white;
   border-radius: 6px;
 }
@@ -266,7 +266,7 @@ span {
 }
 
 .menu-lojas-container {
-  position: relative; 
+  position: relative;
 }
 
 #input-busca-lojas::placeholder {
@@ -750,4 +750,11 @@ h2 {
 
 .menu-categorias.visivel {
   display: block;
+}
+
+.coupons-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 2rem;
 }
