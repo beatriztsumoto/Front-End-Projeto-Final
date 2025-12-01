@@ -223,7 +223,7 @@ span {
   border-radius: 6px;
 }
 
-.dropdown-lojas {
+.dropdown-lojas, .dropdown-endereco {
   position: absolute;
   top: 100%;
   left: 0;
@@ -241,14 +241,14 @@ span {
   z-index: 9999;
 }
 
-.menu-lojas-container:hover .dropdown-lojas {
+.menu-lojas-container:hover .dropdown-lojas, .menu-endereco-container:hover .dropdown-endereco {
   display: block;
   opacity: 1;
   transform: translateY(0px);
   pointer-events: auto;
 }
 
-#input-busca-lojas {
+#input-busca-lojas, #input-busca-endereco {
   width: 100%;
   padding: 8px 10px;
   border: none;
@@ -257,15 +257,15 @@ span {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.menu-lojas-container {
+.menu-lojas-container, .menu-endereco-container {
   position: relative;
 }
 
-#input-busca-lojas::placeholder {
+#input-busca-lojas::placeholder, .menu-endereco-container {
   color: black;
 }
 
-#lista-lojas li {
+#lista-lojas li, #lista-endereco li {
   color: black;
   padding: 10px 8px; 
   display: flex;
@@ -274,13 +274,13 @@ span {
   border-radius: 6px;
 }
 
-#lista-lojas li:hover {
+#lista-lojas li:hover, #lista-endereco li:hover {
   background-color: #ff4fa3; 
   color: white;
   cursor: pointer;
 }
 
-#input-busca-lojas:focus {
+#input-busca-lojas:focus, #input-busca-endereco:focus {
   outline: none;
   border: none;
   box-shadow: none;
