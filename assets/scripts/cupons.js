@@ -147,7 +147,7 @@ function preencherListaEnderecosUnicos(lojas) {
     return;
   }
 
-  // 🎯 Coletar apenas os endereços únicos
+  // Coletar apenas os endereços únicos
   const enderecosUnicos = new Set();
   lojas.forEach((loja) => {
     if (loja.ENDERECO) {
