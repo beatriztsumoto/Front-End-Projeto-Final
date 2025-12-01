@@ -10,7 +10,7 @@
     --ciano-eletrico: #00FFFF;
     --roxo-profundo: #6A0DAD;
     --rosa-choque: #FF69B4;
-    --cinza-claro: ##D9D9D9;
+    --cinza-claro: #D9D9D9;
     --laranja-tangerina: #FFA500;
 }
 
@@ -45,6 +45,7 @@ body {
     font-size: 36px;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
 .form-card {
