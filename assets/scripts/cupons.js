@@ -46,6 +46,11 @@ async function carregarCategorias() {
     const item = document.createElement("div");
     item.classList.add("categoria-item");
     item.textContent = categoria;
+
+    item.addEventListener("click", () => {
+      window.location.href = `/assets/pages/lojaPorCategoria.html?categaria=${encodeURIComponent(categoria)}`
+    })
+
     listaCategorias.appendChild(item);
   });
 }
