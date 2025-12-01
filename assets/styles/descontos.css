@@ -425,13 +425,17 @@ main {
   
   .card-header {
     background: linear-gradient(135deg, #00d4d4 0%, #00b8b8 100%);
-    height: 140px;
+    height: 80px;          
     padding: 1rem;
     display: flex;
-    align-items: center;
+    align-items: center;   
     justify-content: center;
-    position: relative;
-  }
+    text-align: center;
+    overflow: hidden;      
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+}
   
   .badge {
     position: absolute;
@@ -479,10 +483,14 @@ main {
   
   .desconto-img {
     width: 100%;
-    height: 15vh; 
+    height: 13vh; 
     object-fit: contain;
     border-radius: 14px;
   }
+
+.descricao {
+    font-size: 1.3vh;
+}
   
   .valor-desconto {
     font-size: 22px;
