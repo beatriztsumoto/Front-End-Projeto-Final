@@ -80,21 +80,15 @@ function preencherListaLojas(lojas) {
     return;
   }
 
-  function preencherListaLojas(lojas) {
-    listaLojas.innerHTML = "";
-
-    if (!lojas || lojas.length === 0) {
-      listaLojas.innerHTML = "<li>Nenhuma loja encontrada</li>";
-      return;
-    }
-  }
-
   lojas.forEach((loja) => {
     const li = document.createElement("li");
 
-    li.innerHTML = `<img src="${loja.LOGO || ""}" class="logo-loja">
-    <span>${loja.NOME_FANTASIA}</span>`;
     li.textContent = loja.NOME_FANTASIA;
+
+    li.addEventListener("click", () => {
+      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`
+    });
+
     listaLojas.appendChild(li);
   });
 }
