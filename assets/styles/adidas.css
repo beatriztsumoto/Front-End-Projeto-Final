@@ -668,6 +668,11 @@ main {
     box-shadow: 0 6px 20px rgba(139, 47, 201, 0.3);
 }
 
+.btn-back a {
+    text-decoration: none;
+    color: white;
+}
+
 .btn-back:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 28px rgba(139, 47, 201, 0.4);
@@ -761,7 +766,6 @@ main {
     }
 }
 
-/*footer*/
 .main-footer {
     background-color: #6A0DAD;
     color: #fff;
