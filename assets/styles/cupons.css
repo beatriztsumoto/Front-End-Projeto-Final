@@ -206,13 +206,6 @@ span {
   opacity: 1;
   transform: translateY(0px);
   pointer-events: auto;
-}
-
-.menu-categorias-container:hover + .categorias-dropdown {
-  display: block;
-}
-
-.menu-categorias-container:hover .categorias-dropdown {
   display: block;
 }
 
@@ -586,13 +579,6 @@ main {
   
   .menu-categorias.visivel {
     display: block;
-  }
-  
-  .coupons-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    margin-top: 2rem;
   }
   
 
