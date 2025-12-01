@@ -30,14 +30,14 @@ async function carregarDescontos() {
       card.classList.add("card");
 
       card.innerHTML = `
-        <div class="card-header">${d.TITULO}</div>
+        <div class="card-header"><span>${d.TITULO}</span></div>
 
         <div class="card-body">
           <img src="${d.FOTO_ITEM}" class="desconto-img">
 
-          <h3>${d.LOJA.NOME_FANTASIA}</h3>
+          <h3 class = nome-desconto>${d.LOJA.NOME_FANTASIA}</h3>
 
-          <p>${d.DESCRICAO}</p>
+          <p class = descricao>${d.DESCRICAO}</p>
 
           <span class="valor-desconto">
             - R$ ${parseFloat(d.VALOR_DESCONTO).toFixed(2)}
