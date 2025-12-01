@@ -53,6 +53,10 @@ span {
   text-shadow: 0 3px 10px rgba(49, 48, 48, 0.6);
 }
 
+
+
+/* ===== SEARCH ===== */
+
 .search {
   flex: 1;
   min-width: 250px;

@@ -89,9 +89,9 @@ span {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  border: none;
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -121,27 +121,28 @@ span {
 
 .btn-login {
   background: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #FF69B4;
+  text-shadow: 0 2px 8px rgba(63, 50, 57, 0.5);
 }
 
 .btn-login:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
 }
 
 .btn-register {
-  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
-  color: #000;
+  background-color: #FFA500 ;
+  color: #6A0DAD;
   border: none;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(67, 67, 67, 0.3);
 }
 
 .btn-register:hover {
-  background: linear-gradient(135deg, #ffc700 0%, #ff8c00 100%);
+  background-color: rgb(255, 184, 54);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(39, 39, 39, 0.4);
 }
 
 .header-bottom {
@@ -603,6 +604,8 @@ h2 {
   transform: translateY(0);
 }
 
+
+/* footer */
 .main-footer {
   background-color: #6a0dad;
   color: #fff;
