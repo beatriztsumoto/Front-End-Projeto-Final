@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descontaí - Cupons e Descontos</title>
+    <link rel="stylesheet" href="/assets/styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-top">
+          <div class="logo">
+            <a href="../pages/index.html">
+              <img
+                src="assets/img/logo.png"
+                alt="Descontaí Logo"
+                class="logo-img"
+              />
+            </a>
+            <span class="logo-text">Descontaí</span>
+          </div>
+
+          <div class="search">
+            <input type="text" placeholder="Procurar ofertas" />
+          </div>
+
+          <button class="btn-saved">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"
+              ></path>
+            </svg>
+            <span>Cupons salvos</span>
+          </button>
+          <a href="assets/pages/loginCliente.html">
+            <button class="btn btn-login"><strong>LOGIN</strong></button>
+          </a>
+          <a href="assets/pages/clienteOuLoja.html">
+            <button class="btn btn-register">Cadastrar-se</button>
+          </a>
+        </div>
+        <div class="header-bottom">
+          <button class="nav-btn" id="btn-cep">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Informe seu CEP</span>
+          </button>
+          <div class="popup-overlay" id="popup-cep" style="display: none">
+            <div class="popup-container">
+              <svg
+                class="popup-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  fill="#FFA500"
+                />
+              </svg>
+
+              <h2 class="popup-title">Informe seu CEP:</h2>
+
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="input-cep"
+                  placeholder="CEP"
+                  maxlength="9"
+                />
+              </div>
+
+              <button class="btn-pronto">PRONTO</button>
+            </div>
+          </div>
+          <div class="menu-categorias-container">
+            <button id="btn-categorias" class="nav-btn">
+              <span>Categorias</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div id="lista-categorias" class="categorias-dropdown"></div>
+          </div>
+          <div class="menu-lojas-container">
+            <button id="btn-lojas" class="nav-btn">
+              <span>Lojas</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div id="dropdown-lojas" class="dropdown-lojas">
+              <input
+                type="text"
+                id="input-busca-lojas"
+                placeholder="Buscar lojas..."
+              />
+
+              <ul id="lista-lojas"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h2>Cupons de desconto: Destaques da Semana</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="badge">TOP</span>
+            <img src="../img/renner.png" alt="" />
+          </div>
+          <div class="card-body">
+            <p>Cupom Renner para comprar com 15% de desconto</p>
+            <p class="cashback">+ até 8,5% de cashback</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="./adidas.html">
+            <div class="card-header">
+              <span class="badge">TOP</span>
+              <img class="adidas" src="../img/adidas.png" alt="" />
+            </div>
+          </a>
+          <div class="card-body">
+            <p>Cupom Adidas para comprar com 15% de desconto</p>
+            <p class="cashback">+ até 6,5% de cashback</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="./mercadoLivre.html">
+            <div class="card-header">
+              <span class="badge">TOP</span>
+              <img class="mercadoLivre" src="../img/mercadoLivre.png" alt="" />
+            </div>
+            <div class="card-body">
+              <p>Cupom Mercado Livre para comprar com 15% de desconto</p>
+              <p class="cashback">+ até 6,5% de cashback</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="badge">TOP</span>
+            <img class="shopee" src="../img/shopee.png" alt="" />
+          </div>
+          <div class="card-body">
+            <p>Cupom Shopee para comprar com 15% de desconto</p>
+            <p class="cashback">+ até 6,5% de cashback</p>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./amazon.html">
+            <div class="card-header">
+              <span class="badge">TOP</span>
+              <img src="../img/amazon.png" alt="" />
+            </div>
+            <div class="card-body">
+              <p>Cupom Amazon para comprar com 15% de desconto</p>
+              <p class="cashback">+ até 6,5% de cashback</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="badge">TOP</span>
+            <img class="zeDelivery" src="../img/zeDelivery.png" alt="" />
+          </div>
+          <div class="card-body">
+            <p>Cupom Zé Delivery para comprar com 15% de desconto</p>
+            <p class="cashback">+ até 8,5% de cashback</p>
+          </div>
+        </div>
+        <div class="card">
+          <a href="./casasBahia.html">
+            <div class="card-header">
+              <span class="badge">TOP</span>
+              <img src="../img/casasBahia.png" alt="" />
+            </div>
+            <div class="card-body">
+              <p>Cupom Bahia para comprar com 15% de desconto</p>
+              <p class="cashback">+ até 6,5% de cashback</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="../pages/nike.html">
+            <div class="card-header">
+              <span class="badge">TOP</span>
+              <img src="../img/nike.png" alt="" />
+            </div>
+
+            <div class="card-body">
+              <p>Cupom Nike para comprar com 15% de desconto</p>
+              <p class="cashback">+ até 6,5% de cashback</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="badge">TOP</span>
+            <img src="../img/oBoticario.png" alt="" />
+          </div>
+          <div class="card-body">
+            <p>Cupom O Boticário para comprar com 15% de desconto</p>
+            <p class="cashback">+ até 6,5% de cashback</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="./magalu.html">
+            <div class="card-header">
+              <span class="badge">TOP</span>
+              <img src="../img/magalu.png" alt="" />
+            </div>
+
+            <div class="card-body">
+              <p>Cupom Magalu para comprar com 15% de desconto</p>
+              <p class="cashback">+ até 6,5% de cashback</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-section navigation-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Cupons Salvos</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Cadastrar-se</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section newsletter-contact">
+          <h4>Fale Conosco</h4>
+          <p>📍 Rua Jacitaba, 253, Bairro do Limoeiro - São Paulo/SP</p>
+          <p>
+            📧 <a href="mailto:contato@exemplo.com">contato@devision.com</a>
+          </p>
+          <p>📞 (11) 3291-0578</p>
+        </div>
+
+        <div>
+          <h4 style="margin-top: 15px">Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu e-mail" required />
+            <button type="submit">
+              <a href="../pages/clienteOuLoja.html">Inscrever-se</a>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Devision. Todos os direitos reservados.</p>
+        <div class="legal-links">
+          <a href="#">Política de Privacidade</a> |
+          <a href="#">Termos de Serviço</a> |
+          <a href="#">Troca e Devolução</a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/assets/scripts/index.js"></script>
+  </body>
+</html>
