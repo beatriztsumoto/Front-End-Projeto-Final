@@ -34,20 +34,19 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  flex: 0 1 150px; /* Ajuste para logo não invadir a área da pesquisa */
 }
 
 .logo-img {
-  width: 40px; /* ajuste conforme o tamanho da sua logo */
+  width: 55px;
   height: auto;
 }
 
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #00ffff;
+  text-shadow: 0 3px 10px rgba(49, 48, 48, 0.6);
 }
-
 /* ===== SEARCH ===== */
 .search {
   flex: 1;
