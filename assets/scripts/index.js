@@ -86,7 +86,7 @@ function preencherListaLojas(lojas) {
     li.textContent = loja.NOME_FANTASIA;
 
     li.addEventListener("click", () => {
-      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`
+      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`;
     });
 
     listaLojas.appendChild(li);
@@ -179,7 +179,7 @@ carregarCategorias();
 
 function removerRepetidosPorLoja(lista) {
   const lojasVistas = new Set();
-  return lista.filter(item => {
+  return lista.filter((item) => {
     if (lojasVistas.has(item.LOJA.ID_LOJA)) return false;
     lojasVistas.add(item.LOJA.ID_LOJA);
     return true;
@@ -188,19 +188,20 @@ function removerRepetidosPorLoja(lista) {
 
 async function carregarHome() {
   try {
-
     const cuponsReq = await fetch("http://localhost:3000/cupons");
     const descontosReq = await fetch("http://localhost:3000/descontos");
 
     const cuponsJson = await cuponsReq.json();
-const descontosJson = await descontosReq.json();
+    const descontosJson = await descontosReq.json();
 
-const listaCupons = cuponsJson.cupons;  
-const listaDescontos = descontosJson.data; 
-
+    const listaCupons = cuponsJson.cupons;
+    const listaDescontos = descontosJson.data;
 
     const cuponsSemRepetir = removerRepetidosPorLoja(listaCupons).slice(0, 10);
-    const descontosSemRepetir = removerRepetidosPorLoja(listaDescontos).slice(0, 10);
+    const descontosSemRepetir = removerRepetidosPorLoja(listaDescontos).slice(
+      0,
+      10
+    );
 
     let alternados = [];
     let i = 0;
@@ -217,7 +218,7 @@ const listaDescontos = descontosJson.data;
 
     const container = document.querySelector(".grid");
 
-    alternados.forEach(item => {
+    alternados.forEach((item) => {
       const d = item.data;
 
       const card = document.createElement("div");
@@ -231,7 +232,9 @@ const listaDescontos = descontosJson.data;
 
           <div class="card-body">
             <p>${d.TITULO}</p>
-            <span class="cashback">${d.CASHBACK ? d.CASHBACK : "Sem cashback"}</span>
+            <span class="cashback">${
+              d.CASHBACK ? d.CASHBACK : "Sem cashback"
+            }</span>
           </div>
         `;
       }
@@ -244,17 +247,92 @@ const listaDescontos = descontosJson.data;
 
           <div class="card-body">
             <p>${d.TITULO}</p>
-            <span class="valor-desconto">- R$ ${parseFloat(d.VALOR_DESCONTO).toFixed(2)}</span>
+            <span class="valor-desconto">- R$ ${parseFloat(
+              d.VALOR_DESCONTO
+            ).toFixed(2)}</span>
           </div>
         `;
       }
 
       container.appendChild(card);
     });
-
   } catch (erro) {
     console.error("Erro ao carregar home:", erro);
   }
 }
 
 carregarHome();
+
+// Carregar pesquisa de descontos por título e cupons por código e tótilo em placeholder
+const input = document.getElementById("input-busca");
+const dropdown = document.getElementById("dropdown-resultados");
+
+input.addEventListener("input", async () => {
+  const termo = input.value.trim();
+
+  if (termo.length === 0) {
+    dropdown.classList.remove("show");
+    return;
+  }
+
+  try {
+    // BUSCA EM DESCONTOS + CUPONS EM PARALELO
+    const [resDescontos, resCupons] = await Promise.all([
+      fetch(
+        `http://localhost:3000/descontos?modo=autocomplete&busca=${encodeURIComponent(
+          termo
+        )}`
+      ),
+      fetch(
+        `http://localhost:3000/cupons?modo=autocomplete&busca=${encodeURIComponent(
+          termo
+        )}`
+      ),
+    ]);
+
+    let descontos = [];
+    let cupons = [];
+
+    if (resDescontos.ok) {
+      const jsonDescontos = await resDescontos.json();
+      descontos = jsonDescontos.data || [];
+    }
+
+    if (resCupons.ok) {
+      cupons = await resCupons.json(); // já retorna array direto
+    }
+
+    const resultados = [
+      ...descontos.map((d) => ({
+        tipo: "desconto",
+        texto: d.TITULO,
+      })),
+      ...cupons.map((c) => ({
+        tipo: "cupom",
+        texto: `${c.TITULO} (${c.CODIGO})`,
+      })),
+    ];
+
+    if (resultados.length === 0) {
+      dropdown.innerHTML = `<div class="dropdown-item">Nenhum resultado encontrado</div>`;
+      dropdown.classList.add("show");
+      return;
+    }
+
+    dropdown.innerHTML = resultados
+      .map(
+        (r) => `
+        <div class="dropdown-item">
+          <strong>${r.tipo === "cupom" ? "Cupom" : "Desconto"}:</strong> ${
+          r.texto
+        }
+        </div>
+      `
+      )
+      .join("");
+
+    dropdown.classList.add("show");
+  } catch (err) {
+    console.error("Erro na busca:", err);
+  }
+});
