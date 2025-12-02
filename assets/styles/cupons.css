@@ -53,7 +53,6 @@ span {
   text-shadow: 0 3px 10px rgba(49, 48, 48, 0.6);
 }
 
-
 .search {
   position: relative;
   flex: 1;
@@ -111,6 +110,19 @@ span {
   opacity: 1;
   transform: translateY(0px);
   pointer-events: auto;
+}
+
+#dropdown-resultados::-webkit-scrollbar {
+  width: 8px;
+}
+
+#dropdown-resultados::-webkit-scrollbar-thumb {
+  background: #dfb9d4;
+  border-radius: 8px;
+}
+
+#dropdown-resultados::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
 }
 
 .dropdown-item {

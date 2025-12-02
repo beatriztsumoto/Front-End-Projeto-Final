@@ -178,6 +178,7 @@ function preencherListaLojas(lojas) {
   });
 }
 
+// Barra de pesquisa por endereço
 const btnEndereco = document.getElementById("btn-endereco");
 const dropdownEndereco = document.getElementById("dropdown-endereco");
 const listaEndereco = document.getElementById("lista-endereco");
