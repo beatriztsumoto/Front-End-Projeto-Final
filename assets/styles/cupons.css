@@ -113,6 +113,19 @@ span {
   pointer-events: auto;
 }
 
+#dropdown-resultados::-webkit-scrollbar {
+  width: 8px;
+}
+
+#dropdown-resultados::-webkit-scrollbar-thumb {
+  background: #dfb9d4;
+  border-radius: 8px;
+}
+
+#dropdown-resultados::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+}
+
 .dropdown-item {
   padding: 10px;
   color: rgb(0, 0, 0);
