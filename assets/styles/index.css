@@ -92,6 +92,7 @@ span {
   margin-top: 1%;
   background: rgba(255, 105, 180, 0.45);
   border-radius: 8px;
+  overflow-y: auto;
   max-height: 400px;
   padding: 10px;
   backdrop-filter: blur(8px);
@@ -109,6 +110,19 @@ span {
   opacity: 1;
   transform: translateY(0px);
   pointer-events: auto;
+}
+
+#dropdown-resultados::-webkit-scrollbar {
+  width: 8px;
+}
+
+#dropdown-resultados::-webkit-scrollbar-thumb {
+  background: #dfb9d4;
+  border-radius: 8px;
+}
+
+#dropdown-resultados::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
 }
 
 .dropdown-item {

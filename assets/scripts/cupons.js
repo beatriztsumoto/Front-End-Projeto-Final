@@ -1,5 +1,79 @@
 import { buscarLojasPorNome, buscarLojasPorEndereco } from "./lojas.js";
 
+// Carregar pesquisa de descontos por título e cupons por código e tótilo em placeholder
+const input = document.getElementById("input-busca");
+const dropdown = document.getElementById("dropdown-resultados");
+
+input.addEventListener("input", async () => {
+  const termo = input.value.trim();
+
+  if (termo.length === 0) {
+    dropdown.classList.remove("show");
+    return;
+  }
+
+  try {
+    // BUSCA EM DESCONTOS + CUPONS EM PARALELO
+    const [resDescontos, resCupons] = await Promise.all([
+      fetch(
+        `http://localhost:3000/descontos?modo=autocomplete&busca=${encodeURIComponent(
+          termo
+        )}`
+      ),
+      fetch(
+        `http://localhost:3000/cupons?modo=autocomplete&busca=${encodeURIComponent(
+          termo
+        )}`
+      ),
+    ]);
+
+    let descontos = [];
+    let cupons = [];
+
+    if (resDescontos.ok) {
+      const jsonDescontos = await resDescontos.json();
+      descontos = jsonDescontos.data || [];
+    }
+
+    if (resCupons.ok) {
+      cupons = await resCupons.json(); // já retorna array direto
+    }
+
+    const resultados = [
+      ...descontos.map((d) => ({
+        tipo: "desconto",
+        texto: d.TITULO,
+      })),
+      ...cupons.map((c) => ({
+        tipo: "cupom",
+        texto: `${c.TITULO} (${c.CODIGO})`,
+      })),
+    ];
+
+    if (resultados.length === 0) {
+      dropdown.innerHTML = `<div class="dropdown-item">Nenhum resultado encontrado</div>`;
+      dropdown.classList.add("show");
+      return;
+    }
+
+    dropdown.innerHTML = resultados
+      .map(
+        (r) => `
+        <div class="dropdown-item">
+          <strong>${r.tipo === "cupom" ? "Cupom" : "Desconto"}:</strong> ${
+          r.texto
+        }
+        </div>
+      `
+      )
+      .join("");
+
+    dropdown.classList.add("show");
+  } catch (err) {
+    console.error("Erro na busca:", err);
+  }
+});
+
 const btnCep = document.getElementById("btn-cep");
 const popupCep = document.getElementById("popup-cep");
 const btnPronto = document.querySelector(".btn-pronto");
@@ -48,8 +122,10 @@ async function carregarCategorias() {
     item.textContent = categoria;
 
     item.addEventListener("click", () => {
-      window.location.href = `/assets/pages/lojaPorCategoria.html?categaria=${encodeURIComponent(categoria)}`
-    })
+      window.location.href = `/assets/pages/lojaPorCategoria.html?categaria=${encodeURIComponent(
+        categoria
+      )}`;
+    });
 
     listaCategorias.appendChild(item);
   });
@@ -95,7 +171,7 @@ function preencherListaLojas(lojas) {
     li.textContent = loja.NOME_FANTASIA;
 
     li.addEventListener("click", () => {
-      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`
+      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`;
     });
 
     listaLojas.appendChild(li);
