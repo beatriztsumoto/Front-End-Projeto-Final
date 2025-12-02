@@ -1,164 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --ciano-eletrico: #00FFFF;
-    --roxo-profundo: #6A0DAD;
-    --rosa-choque: #FF69B4;
-    --cinza-claro: #D9D9D9;
-    --laranja-tangerina: #FFA500;
+  --ciano-eletrico: #00ffff;
+  --roxo-profundo: #6a0dad;
+  --rosa-choque: #ff69b4;
+  --cinza-claro: #d9d9d9;
+  --laranja-tangerina: #ffa500;
 }
 
 body {
-    font-family: "Alexandria",Arial, sans-serif;
-    background: linear-gradient(135deg, var(--roxo-profundo) 0%, #5a0b94 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  font-family: "Alexandria", Arial, sans-serif;
+  background: linear-gradient(135deg, var(--roxo-profundo) 0%, #5a0b94 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .container {
-    width: 100%;
-    max-width: 700px;
-    position: relative;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
 }
 
 .logo-section {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.logo-icon img{
-    text-align: center;
-    width: 100px;
+.logo-icon img {
+  text-align: center;
+  width: 100px;
 }
 
 .logo-text {
-    color: var(--ciano-eletrico);
-    font-size: 36px;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
+  color: var(--ciano-eletrico);
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.links-directions {
+  text-decoration: none;
 }
 
 .form-card {
-    background: var(--cinza-claro);
-    border-radius: 20px;
-    padding: 50px 60px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: var(--cinza-claro);
+  border-radius: 20px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .form-title {
-    color: var(--rosa-choque);
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 35px;
+  color: var(--rosa-choque);
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 35px;
 }
 
 .input-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 input {
-    width: 100%;
-    padding: 18px 20px;
-    border: none;
-    border-radius: 12px;
-    background: #C8C8C8;
-    font-size: 16px;
-    color: #666;
-    outline: none;
-    transition: background 0.3s;
+  width: 100%;
+  padding: 18px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #c8c8c8;
+  font-size: 16px;
+  color: #666;
+  outline: none;
+  transition: background 0.3s;
 }
 
 input::placeholder {
-    color: #999;
+  color: #999;
 }
 
 input:focus {
-    background: #BEBEBE;
+  background: #bebebe;
 }
 
 .checkbox-group {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
 }
 
 .checkbox-group input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
-    margin-right: 12px;
-    cursor: pointer;
-    accent-color: var(--roxo-profundo);
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: var(--roxo-profundo);
 }
 
 .checkbox-group label {
-    color: #333;
-    font-size: 16px;
-    cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .btn-proximo {
-    width: 100%;
-    padding: 18px;
-    background: #B8B8B8;
-    border: none;
-    border-radius: 12px;
-    color: #666;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
+  width: 100%;
+  padding: 18px;
+  background: #b8b8b8;
+  border: none;
+  border-radius: 12px;
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .btn-proximo:hover {
-    background: #A8A8A8;
+  background: #a8a8a8;
 }
 
 .btn-voltar {
-    position: relative;
-    bottom: -30px;
-    margin-left: -520px;
-    padding: 15px 40px;
-    background: var(--laranja-tangerina);
-    border: none;
-    border-radius: 10px;
-    color: var(--roxo-profundo);
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
+  position: relative;
+  bottom: -30px;
+  margin-left: -520px;
+  padding: 15px 40px;
+  background: var(--laranja-tangerina);
+  border: none;
+  border-radius: 10px;
+  color: var(--roxo-profundo);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .btn-voltar:hover {
-    background: #ff9500;
+  background: #ff9500;
 }
 
 @media (max-width: 768px) {
-    .form-card {
-        padding: 35px 30px;
-    }
+  .form-card {
+    padding: 35px 30px;
+  }
 
-    .form-title {
-        font-size: 28px;
-    }
+  .form-title {
+    font-size: 28px;
+  }
 
-    .logo-text {
-        font-size: 26px;
-    }
+  .logo-text {
+    font-size: 26px;
+  }
 
-    .btn-voltar {
-        position: static;
-        margin-top: 30px;
-        width: 150px;
-    }
+  .btn-voltar {
+    position: static;
+    margin-top: 30px;
+    width: 150px;
+  }
 }
