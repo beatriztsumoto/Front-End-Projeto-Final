@@ -22,7 +22,13 @@
           </div>
 
           <div class="search">
-            <input type="text" placeholder="Procurar ofertas" />
+            <input
+              id="input-busca"
+              type="text"
+              placeholder="Procurar ofertas"
+              autocomplete="off"
+            />
+            <div id="dropdown-resultados" class="dropdown-autocomplete"></div>
           </div>
 
           <button class="btn-saved">
@@ -90,6 +96,7 @@
               <button class="btn-pronto">PRONTO</button>
             </div>
           </div>
+
           <div class="menu-categorias-container">
             <button id="btn-categorias" class="nav-btn">
               <span>Categorias</span>
@@ -107,6 +114,33 @@
 
             <div id="lista-categorias" class="categorias-dropdown"></div>
           </div>
+
+          <div class="menu-endereco-container">
+            <button id="btn-endereco" class="nav-btn">
+              <span>Cidade</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div id="dropdown-endereco" class="dropdown-endereco">
+              <input
+                type="text"
+                id="input-busca-endereco"
+                placeholder="Buscar por cidade..."
+              />
+
+              <ul id="lista-endereco"></ul>
+            </div>
+          </div>
+
           <div class="menu-lojas-container">
             <button id="btn-lojas" class="nav-btn">
               <span>Lojas</span>
@@ -136,44 +170,43 @@
           <a href="./cupons.html">
             <button id="btn-cupons" class="nav-btn">
               <span>Cupons</span>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </a>
-          
-        <a href="./descontos.html">
-          <button id="btn-descontos" class="nav-btn">
-            <span>Descontos</span>
-            <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-      </a>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </a>
+
+          <a href="./descontos.html">
+            <button id="btn-descontos" class="nav-btn">
+              <span>Descontos</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </a>
         </div>
       </div>
     </header>
 
     <main>
-        <h2>Descontos</h2>
-      
-        <div class="grid" id="lista-descontos">
-        </div>
-      </main>
+      <h2>Descontos</h2>
+
+      <div class="grid" id="lista-descontos"></div>
+    </main>
 
     <footer class="main-footer">
       <div class="footer-container">

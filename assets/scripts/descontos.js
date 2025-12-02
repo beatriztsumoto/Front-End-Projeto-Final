@@ -1,3 +1,79 @@
+import { buscarLojasPorNome, buscarLojasPorEndereco } from "./lojas.js";
+
+// Carregar pesquisa de descontos por título e cupons por código e tótilo em placeholder
+const input = document.getElementById("input-busca");
+const dropdown = document.getElementById("dropdown-resultados");
+
+input.addEventListener("input", async () => {
+  const termo = input.value.trim();
+
+  if (termo.length === 0) {
+    dropdown.classList.remove("show");
+    return;
+  }
+
+  try {
+    // BUSCA EM DESCONTOS + CUPONS EM PARALELO
+    const [resDescontos, resCupons] = await Promise.all([
+      fetch(
+        `http://localhost:3000/descontos?modo=autocomplete&busca=${encodeURIComponent(
+          termo
+        )}`
+      ),
+      fetch(
+        `http://localhost:3000/cupons?modo=autocomplete&busca=${encodeURIComponent(
+          termo
+        )}`
+      ),
+    ]);
+
+    let descontos = [];
+    let cupons = [];
+
+    if (resDescontos.ok) {
+      const jsonDescontos = await resDescontos.json();
+      descontos = jsonDescontos.data || [];
+    }
+
+    if (resCupons.ok) {
+      cupons = await resCupons.json(); // já retorna array direto
+    }
+
+    const resultados = [
+      ...descontos.map((d) => ({
+        tipo: "desconto",
+        texto: d.TITULO,
+      })),
+      ...cupons.map((c) => ({
+        tipo: "cupom",
+        texto: `${c.TITULO} (${c.CODIGO})`,
+      })),
+    ];
+
+    if (resultados.length === 0) {
+      dropdown.innerHTML = `<div class="dropdown-item">Nenhum resultado encontrado</div>`;
+      dropdown.classList.add("show");
+      return;
+    }
+
+    dropdown.innerHTML = resultados
+      .map(
+        (r) => `
+        <div class="dropdown-item">
+          <strong>${r.tipo === "cupom" ? "Cupom" : "Desconto"}:</strong> ${
+          r.texto
+        }
+        </div>
+      `
+      )
+      .join("");
+
+    dropdown.classList.add("show");
+  } catch (err) {
+    console.error("Erro na busca:", err);
+  }
+});
+
 const btnCep = document.getElementById("btn-cep");
 const popupCep = document.getElementById("popup-cep");
 const btnPronto = document.querySelector(".btn-pronto");
@@ -44,8 +120,6 @@ async function carregarCategorias() {
   });
 }
 
-import { buscarLojasPorNome } from "./lojas.js";
-
 const dropdownLojas = document.getElementById("dropdown-lojas");
 const inputBuscaLojas = document.getElementById("input-busca-lojas");
 const listaLojas = document.getElementById("lista-lojas");
@@ -86,10 +160,93 @@ function preencherListaLojas(lojas) {
     li.textContent = loja.NOME_FANTASIA;
 
     li.addEventListener("click", () => {
-      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`
+      window.location.href = `/assets/pages/paginaLojas.html?id=${loja.ID_LOJA}`;
     });
 
     listaLojas.appendChild(li);
+  });
+}
+
+// Barra de pesquisa por endereço
+const btnEndereco = document.getElementById("btn-endereco");
+const dropdownEndereco = document.getElementById("dropdown-endereco");
+const listaEndereco = document.getElementById("lista-endereco");
+const inputBuscaEndereco = document.getElementById("input-busca-endereco");
+
+// 1. Abre/Fecha dropdown Endereço
+btnEndereco.addEventListener("click", () => {
+  dropdownEndereco.classList.toggle("show");
+  if (dropdownEndereco.classList.contains("show")) {
+    inputBuscaEndereco.value = "";
+    listaEndereco.innerHTML =
+      "<li>Digite ao menos 3 caracteres do endereço...</li>"; // Aumentei para 3, é mais eficiente
+    inputBuscaEndereco.focus();
+  }
+});
+
+// 2. Buscar enquanto digita
+inputBuscaEndereco.addEventListener("input", async () => {
+  const termo = inputBuscaEndereco.value.trim();
+
+  if (termo.length < 3) {
+    listaEndereco.innerHTML =
+      "<li>Digite ao menos 3 caracteres do endereço...</li>";
+    return;
+  }
+
+  try {
+    const lojas = await buscarLojasPorEndereco(termo);
+    preencherListaEnderecosUnicos(lojas); // 🎯 Mudança no nome da função para clareza
+  } catch (error) {
+    console.error("Não há lojas nesse local:", error);
+    listaEndereco.innerHTML = "<li>Não há lojas nesse local </li>";
+  }
+});
+
+// 3. Função para preencher a lista de resultados (AGRUPANDO ENDEREÇOS ÚNICOS)
+function preencherListaEnderecosUnicos(lojas) {
+  listaEndereco.innerHTML = "";
+
+  if (!lojas || lojas.length === 0) {
+    listaEndereco.innerHTML =
+      "<li>Nenhuma loja encontrada para este endereço</li>";
+    return;
+  }
+
+  // Coletar apenas os endereços únicos
+  const enderecosUnicos = new Set();
+  lojas.forEach((loja) => {
+    if (loja.ENDERECO) {
+      enderecosUnicos.add(loja.ENDERECO);
+    }
+  });
+
+  // Iterar e criar um item de lista para CADA ENDEREÇO ÚNICO
+  enderecosUnicos.forEach((enderecoUnico) => {
+    const li = document.createElement("li");
+    li.classList.add("endereco-item");
+
+    li.innerHTML = `<span>${enderecoUnico}</span>`;
+
+    li.dataset.enderecoCompleto = enderecoUnico;
+
+    li.addEventListener("click", () => {
+      btnEndereco.querySelector("span").textContent =
+        enderecoUnico.substring(0, 20) + "...";
+
+      // Fecha o dropdown
+      dropdownEndereco.classList.remove("show");
+
+      const lojasNoEndereco = lojas.filter(
+        (loja) => loja.ENDERECO === enderecoUnico
+      );
+
+      console.log(
+        `Endereço selecionado. Total de lojas encontradas: ${lojasNoEndereco.length}`
+      );
+    });
+
+    listaEndereco.appendChild(li);
   });
 }
 
@@ -106,7 +263,7 @@ async function carregarDescontos() {
 
     console.log("API RETORNOU:", data);
 
-    const descontos = data.data; 
+    const descontos = data.data;
 
     containerDescontos.innerHTML = "";
 
@@ -144,11 +301,9 @@ async function carregarDescontos() {
 
       containerDescontos.appendChild(card);
     });
-
   } catch (erro) {
     console.error("Erro ao carregar descontos:", erro);
   }
 }
 
 carregarDescontos();
-
