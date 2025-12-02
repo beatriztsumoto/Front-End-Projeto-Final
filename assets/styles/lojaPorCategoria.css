@@ -340,6 +340,10 @@ span {
   box-shadow: none;
 }
 
+.links-directions {
+  text-decoration: none;
+}
+
 .popup-overlay {
     position: fixed;
     top: 0;
