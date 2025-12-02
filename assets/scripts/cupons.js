@@ -122,7 +122,7 @@ async function carregarCategorias() {
     item.textContent = categoria;
 
     item.addEventListener("click", () => {
-      window.location.href = `/assets/pages/lojaPorCategoria.html?categaria=${encodeURIComponent(
+      window.location.href = `/assets/pages/lojaPorCategoria.html?categoria=${encodeURIComponent(
         categoria
       )}`;
     });
