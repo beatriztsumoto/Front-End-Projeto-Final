@@ -96,7 +96,7 @@ span {
   max-height: 400px;
   padding: 10px;
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: none;
   opacity: 0;
   transform: translateY(10px);
@@ -122,7 +122,7 @@ span {
 }
 
 #dropdown-resultados::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-item {
@@ -143,9 +143,9 @@ span {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 10px;
-  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -175,28 +175,27 @@ span {
 
 .btn-login {
   background: transparent;
-  color: #FF69B4;
-  text-shadow: 0 2px 8px rgba(63, 50, 57, 0.5);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-login:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
 }
 
 .btn-register {
-  background-color: #FFA500 ;
-  color: #6A0DAD;
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+  color: #000;
   border: none;
-  box-shadow: 0 4px 12px rgba(67, 67, 67, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .btn-register:hover {
-  background-color: rgb(255, 184, 54);
+  background: linear-gradient(135deg, #ffc700 0%, #ff8c00 100%);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(39, 39, 39, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
 .header-bottom {
@@ -253,16 +252,14 @@ span {
   z-index: 9999;
   opacity: 0;
   transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .menu-categorias-container:hover .categorias-dropdown {
   opacity: 1;
   transform: translateY(0px);
   pointer-events: auto;
-  display: block;
-}
-
-.menu-categorias-container:hover + .categorias-dropdown {
   display: block;
 }
 
@@ -280,7 +277,8 @@ span {
   border-radius: 6px;
 }
 
-.dropdown-lojas, .dropdown-endereco {
+.dropdown-lojas,
+.dropdown-endereco {
   position: absolute;
   top: 100%;
   left: 0;
@@ -298,14 +296,16 @@ span {
   z-index: 9999;
 }
 
-.menu-lojas-container:hover .dropdown-lojas, .menu-endereco-container:hover .dropdown-endereco {
+.menu-lojas-container:hover .dropdown-lojas,
+.menu-endereco-container:hover .dropdown-endereco {
   display: block;
   opacity: 1;
   transform: translateY(0px);
   pointer-events: auto;
 }
 
-#input-busca-lojas, #input-busca-endereco {
+#input-busca-lojas,
+#input-busca-endereco {
   width: 100%;
   padding: 8px 10px;
   border: none;
@@ -314,33 +314,42 @@ span {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.menu-lojas-container, .menu-endereco-container {
+.menu-lojas-container,
+.menu-endereco-container {
   position: relative;
 }
 
-#input-busca-lojas::placeholder, .menu-endereco-container {
+#input-busca-lojas::placeholder,
+.menu-endereco-container {
   color: black;
 }
 
-#lista-lojas li, #lista-endereco li {
+#lista-lojas li,
+#lista-endereco li {
   color: black;
-  padding: 10px 8px; 
+  padding: 10px 8px;
   display: flex;
   align-items: center;
   gap: 10px;
   border-radius: 6px;
 }
 
-#lista-lojas li:hover, #lista-endereco li:hover {
-  background-color: #ff4fa3; 
+#lista-lojas li:hover,
+#lista-endereco li:hover {
+  background-color: #ff4fa3;
   color: white;
   cursor: pointer;
 }
 
-#input-busca-lojas:focus, #input-busca-endereco:focus {
+#input-busca-lojas:focus,
+#input-busca-endereco:focus {
   outline: none;
   border: none;
   box-shadow: none;
+}
+
+.links-directions {
+  text-decoration: none;
 }
 
 main {
@@ -651,7 +660,6 @@ h2 {
 .btn-pronto:active {
   transform: translateY(0);
 }
-
 
 /* footer */
 .main-footer {
