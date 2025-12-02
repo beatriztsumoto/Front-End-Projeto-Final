@@ -230,22 +230,6 @@ function preencherListaEnderecosUnicos(lojas) {
 
     li.dataset.enderecoCompleto = enderecoUnico;
 
-    li.addEventListener("click", () => {
-      btnEndereco.querySelector("span").textContent =
-        enderecoUnico.substring(0, 20) + "...";
-
-      // Fecha o dropdown
-      dropdownEndereco.classList.remove("show");
-
-      const lojasNoEndereco = lojas.filter(
-        (loja) => loja.ENDERECO === enderecoUnico
-      );
-
-      console.log(
-        `Endereço selecionado. Total de lojas encontradas: ${lojasNoEndereco.length}`
-      );
-    });
-
     listaEndereco.appendChild(li);
   });
 }
