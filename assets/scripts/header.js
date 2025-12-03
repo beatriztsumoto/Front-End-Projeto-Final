@@ -163,9 +163,6 @@ function preencherListaEnderecosUnicos(lojas) {
     li.dataset.enderecoCompleto = enderecoUnico;
 
     li.addEventListener("click", () => {
-      btnEndereco.querySelector("span").textContent =
-        enderecoUnico.substring(0, 20) + "...";
-
       // Fecha o dropdown
       dropdownEndereco.classList.remove("show");
 
