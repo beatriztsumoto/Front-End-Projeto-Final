@@ -139,29 +139,6 @@ span {
   color: white;
 }
 
-.btn-saved {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  backdrop-filter: blur(10px);
-}
-
-.btn-saved:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 .btn {
   padding: 0.75rem 1.5rem;
   border: none;
@@ -205,6 +182,16 @@ span {
   margin-top: 1.25rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#pin-img {
+  width: 3vh;
+  height: 3vh;
+}
+
+#pin-amarelo {
+  width: 10vh;
+  height: 10vh;
 }
 
 .nav-btn,
@@ -276,6 +263,11 @@ span {
   background: #ff4fa3;
   color: white;
   border-radius: 6px;
+}
+
+.setinha {
+  width: 1.5vh;
+  height: 1.5vh;
 }
 
 .dropdown-lojas,
@@ -502,20 +494,6 @@ h2 {
   font-size: 16px;
 }
 
-.badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: linear-gradient(135deg, #ff6b9d 0%, #ff0066 100%);
-  color: white;
-  padding: 6px 16px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: 800;
-  box-shadow: 0 4px 12px rgba(255, 0, 102, 0.3);
-  animation: pulse 2s infinite;
-}
-
 .card-header img {
   width: 120px;
   height: auto;
@@ -697,14 +675,6 @@ h2 {
 
   h2 {
     font-size: 26px;
-  }
-
-  .btn-saved span {
-    display: none;
-  }
-
-  .btn-saved {
-    padding: 0.75rem;
   }
 
   .card {
