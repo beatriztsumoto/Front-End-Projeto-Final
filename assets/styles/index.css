@@ -124,6 +124,7 @@ span {
 
 #dropdown-resultados::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 .dropdown-item {
@@ -137,29 +138,6 @@ span {
 .dropdown-item:hover {
   background: #ff4fa3;
   color: white;
-}
-
-.btn-saved {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  backdrop-filter: blur(10px);
-}
-
-.btn-saved:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn {
@@ -447,30 +425,6 @@ h2 {
   letter-spacing: 1px;
 }
 
-.badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: linear-gradient(135deg, #ff6b9d 0%, #ff0066 100%);
-  color: white;
-  padding: 6px 16px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: 800;
-  box-shadow: 0 4px 12px rgba(255, 0, 102, 0.3);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
 .card-body {
   padding: 1.25rem 1rem;
   text-align: center;
@@ -483,22 +437,6 @@ h2 {
 .card img {
   max-width: 150px;
   height: auto;
-}
-
-.adidas {
-  width: 110px;
-}
-
-.mercadoLivre {
-  width: 110px;
-}
-
-.shopee {
-  width: 70px;
-}
-
-.zeDelivery {
-  width: 150px;
 }
 
 .card-body p {
@@ -539,14 +477,6 @@ h2 {
 
   h2 {
     font-size: 26px;
-  }
-
-  .btn-saved span {
-    display: none;
-  }
-
-  .btn-saved {
-    padding: 0.75rem;
   }
 
   .card {
@@ -810,26 +740,4 @@ h2 {
   .social-icons {
     margin-bottom: 20px;
   }
-}
-
-/* Submenus */
-.menu-categorias {
-  display: none;
-  position: absolute;
-  background: white;
-  border: 1px solid #ddd;
-  padding: 10px;
-  width: 200px;
-  border-radius: 8px;
-}
-
-.menu-categorias.visivel {
-  display: block;
-}
-
-.coupons-grid {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  margin-top: 2rem;
 }

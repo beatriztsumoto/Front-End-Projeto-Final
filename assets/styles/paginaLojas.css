@@ -217,6 +217,16 @@ span {
   height: 10vh;
 }
 
+#pin-img {
+  width: 3vh;
+  height: 3vh;
+}
+
+#pin-amarelo {
+  width: 10vh;
+  height: 10vh;
+}
+
 .nav-btn,
 #btn-categorias {
   display: flex;
@@ -286,6 +296,11 @@ span {
   background: #ff4fa3;
   color: white;
   border-radius: 6px;
+}
+
+.setinha {
+  width: 1.5vh;
+  height: 1.5vh;
 }
 
 .dropdown-lojas,
