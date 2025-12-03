@@ -288,6 +288,11 @@ span {
   border-radius: 6px;
 }
 
+.setinha {
+  width: 1.5vh;
+  height: 1.5vh;
+}
+
 .dropdown-lojas,
 .dropdown-endereco {
   position: absolute;
