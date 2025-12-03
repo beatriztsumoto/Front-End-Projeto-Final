@@ -30,6 +30,7 @@ span {
 
 .header-top {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
@@ -204,6 +205,16 @@ span {
   margin-top: 1.25rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#pin-img {
+  width: 3vh;
+  height: 3vh;
+}
+
+#pin-amarelo {
+  width: 10vh;
+  height: 10vh;
 }
 
 .nav-btn,

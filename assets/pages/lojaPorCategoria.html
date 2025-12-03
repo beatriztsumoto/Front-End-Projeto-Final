@@ -31,27 +31,14 @@
             <div id="dropdown-resultados" class="dropdown-autocomplete"></div>
           </div>
 
-          <button class="btn-saved">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"
-              ></path>
-            </svg>
-            <span>Cupons salvos</span>
-          </button>
-          <a href="./loginCliente.html">
-            <button class="btn btn-login"><strong>LOGIN</strong></button>
-          </a>
-          <a href="./clienteOuLoja.html">
-            <button class="btn btn-register">Cadastrar-se</button>
-          </a>
+          <div class="login-e-cadastro">
+            <a href="./loginCliente.html">
+              <button class="btn btn-login"><strong>LOGIN</strong></button>
+            </a>
+            <a href="./clienteOuLoja.html">
+              <button class="btn btn-register">Cadastrar-se</button>
+            </a>
+          </div>
         </div>
         <div class="header-bottom">
           <button class="nav-btn" id="btn-cep">
@@ -202,7 +189,7 @@
     </header>
 
     <main>
-      <h2 id="titulo-categoria">Lojas da categoria: </h2>
+      <h2 id="titulo-categoria">Lojas da categoria:</h2>
 
       <div id="lista-lojas-categoria" class="grid-lojas"></div>
     </main>
