@@ -454,7 +454,7 @@ h2 {
   background: #ffffff;
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.356);
   cursor: pointer;
   transition: all 0.25s ease;
   display: flex;
