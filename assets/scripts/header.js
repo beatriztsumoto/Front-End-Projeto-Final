@@ -111,7 +111,7 @@ btnEndereco.addEventListener("click", () => {
   if (dropdownEndereco.classList.contains("show")) {
     inputBuscaEndereco.value = "";
     listaEndereco.innerHTML =
-      "<li>Digite ao menos 3 caracteres do endereço...</li>"; 
+      "<li>Digite ao menos 3 caracteres do endereço...</li>";
     inputBuscaEndereco.focus();
   }
 });
@@ -128,14 +128,14 @@ inputBuscaEndereco.addEventListener("input", async () => {
 
   try {
     const lojas = await buscarLojasPorEndereco(termo);
-    preencherListaEnderecosUnicos(lojas); 
+    preencherListaEnderecosUnicos(lojas);
   } catch (error) {
     console.error("Não há lojas nesse local:", error);
     listaEndereco.innerHTML = "<li>Não há lojas nesse local </li>";
   }
 });
 
-// Função para preencher a lista de resultados 
+// Função para preencher a lista de resultados
 function preencherListaEnderecosUnicos(lojas) {
   listaEndereco.innerHTML = "";
 
@@ -163,7 +163,6 @@ function preencherListaEnderecosUnicos(lojas) {
     li.dataset.enderecoCompleto = enderecoUnico;
 
     li.addEventListener("click", () => {
-   
       dropdownEndereco.classList.remove("show");
 
       const lojasNoEndereco = lojas.filter(
@@ -174,7 +173,9 @@ function preencherListaEnderecosUnicos(lojas) {
         `Endereço selecionado. Total de lojas encontradas: ${lojasNoEndereco.length}`
       );
 
-      window.location.href = `/assets/pages/lojaPorEndereco.html?endereco=${encodeURIComponent(enderecoUnico)}`
+      window.location.href = `/assets/pages/lojaPorEndereco.html?endereco=${encodeURIComponent(
+        enderecoUnico
+      )}`;
     });
 
     listaEndereco.appendChild(li);
@@ -192,20 +193,42 @@ function removerRepetidosPorLoja(lista) {
   });
 }
 
-// Carregar pesquisa de descontos por título e cupons por código e tótilo em placeholder
+// Carregar pesquisa de descontos por título e cupons por código e título em placeholder
+function redirecionarParaLoja(idLoja) {
+  const urlRedirecionamento = `/assets/pages/paginaLojas.html?id=${idLoja}`;
+
+  dropdown.classList.remove("show");
+
+  window.location.href = urlRedirecionamento;
+}
+
+document.addEventListener("click", (event) => {
+  if (!dropdown.contains(event.target) && event.target !== input) {
+    dropdown.classList.remove("show");
+  }
+});
+
 const input = document.getElementById("input-busca");
 const dropdown = document.getElementById("dropdown-resultados");
+let listaResultadosBusca = document.getElementById(
+  "lista-resultados-busca-principal"
+);
+if (!listaResultadosBusca) {
+  listaResultadosBusca = document.createElement("div"); // Usamos div para manter a classe 'dropdown-item'
+  listaResultadosBusca.id = "lista-resultados-busca-principal";
+  dropdown.appendChild(listaResultadosBusca);
+}
 
 input.addEventListener("input", async () => {
   const termo = input.value.trim();
 
-  if (termo.length === 0) {
-    dropdown.classList.remove("show");
+  if (termo.length < 3) {
+    listaResultadosBusca.innerHTML = `<div class="dropdown-item">Digite ao menos 3 caracteres...</div>`;
+    dropdown.classList.add("show");
     return;
   }
 
   try {
-    // BUSCA EM DESCONTOS + CUPONS EM PARALELO
     const [resDescontos, resCupons] = await Promise.all([
       fetch(
         `http://localhost:3000/descontos?modo=autocomplete&busca=${encodeURIComponent(
@@ -228,40 +251,53 @@ input.addEventListener("input", async () => {
     }
 
     if (resCupons.ok) {
-      cupons = await resCupons.json(); // já retorna array direto
+      cupons = (await resCupons.json()) || [];
     }
 
-    const resultados = [
+    const resultadosMapeados = [
       ...descontos.map((d) => ({
-        tipo: "desconto",
+        idLoja: d.ID_LOJA,
+        tipo: "Desconto",
         texto: d.TITULO,
       })),
       ...cupons.map((c) => ({
-        tipo: "cupom",
+        idLoja: c.ID_LOJA,
+        tipo: "Cupom",
         texto: `${c.TITULO} (${c.CODIGO})`,
       })),
     ];
 
-    if (resultados.length === 0) {
-      dropdown.innerHTML = `<div class="dropdown-item">Nenhum resultado encontrado</div>`;
-      dropdown.classList.add("show");
-      return;
-    }
-
-    dropdown.innerHTML = resultados
-      .map(
-        (r) => `
-        <div class="dropdown-item">
-          <strong>${r.tipo === "cupom" ? "Cupom" : "Desconto"}:</strong> ${
-          r.texto
-        }
-        </div>
-      `
-      )
-      .join("");
-
-    dropdown.classList.add("show");
+    renderizarResultados(resultadosMapeados);
   } catch (err) {
     console.error("Erro na busca:", err);
+    listaResultadosBusca.innerHTML = `<div class="dropdown-item">Erro ao buscar dados.</div>`;
+    dropdown.classList.add("show");
   }
 });
+
+function renderizarResultados(resultados) {
+  listaResultadosBusca.innerHTML = ""; // Limpa resultados anteriores
+
+  if (resultados.length === 0) {
+    listaResultadosBusca.innerHTML = `<div class="dropdown-item">Nenhum resultado encontrado</div>`;
+    dropdown.classList.add("show");
+    return;
+  }
+
+  resultados.forEach((r) => {
+    const item = document.createElement("div");
+    item.classList.add("dropdown-item");
+
+    item.innerHTML = `
+            <strong>${r.tipo}:</strong> ${r.texto}
+        `;
+
+    item.addEventListener("click", () => {
+      redirecionarParaLoja(r.idLoja);
+    });
+
+    listaResultadosBusca.appendChild(item);
+  });
+
+  dropdown.classList.add("show");
+}
