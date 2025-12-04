@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja por Endereco</title>
+    <link rel="stylesheet" href="../styles/lojaPorEndereco.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-top">
+          <div class="logo">
+            <a href="/index.html">
+              <img
+                src="../img/logo.png"
+                alt="Descontaí Logo"
+                class="logo-img"
+              />
+            </a>
+            <span class="logo-text">Descontaí</span>
+          </div>
+
+          <div class="search">
+            <input
+              id="input-busca"
+              type="text"
+              placeholder="Procurar ofertas"
+              autocomplete="off"
+            />
+            <div id="dropdown-resultados" class="dropdown-autocomplete"></div>
+          </div>
+
+          <div class="login-e-cadastro">
+            <a href="./loginCliente.html">
+              <button class="btn btn-login"><strong>LOGIN</strong></button>
+            </a>
+            <a href="./clienteOuLoja.html">
+              <button class="btn btn-register">Cadastrar-se</button>
+            </a>
+          </div>
+        </div>
+        <div class="header-bottom">
+          <button class="nav-btn" id="btn-cep">
+            <img
+              src="../img/lupa-localizacao.png"
+              alt="Pin branco que marca localização"
+              id="pin-img"
+            />
+            <span>Informe seu CEP</span>
+          </button>
+          <div class="popup-overlay" id="popup-cep" style="display: none">
+            <div class="popup-container">
+              <img
+                src="../img/pin amarelo.png"
+                alt="Pin amarelo que marca localização"
+                id="pin-amarelo"
+              />
+
+              <h2 class="popup-title">Informe seu CEP:</h2>
+
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="input-cep"
+                  placeholder="CEP"
+                  maxlength="9"
+                />
+              </div>
+
+              <button class="btn-pronto">PRONTO</button>
+            </div>
+          </div>
+          <div class="menu-categorias-container">
+            <button id="btn-categorias" class="nav-btn">
+              <span>Categorias</span>
+              <img
+                src="/assets/img/setinha-botao.png"
+                alt="Seta branca apontando para baixo"
+                class="setinha"
+              />
+            </button>
+
+            <div id="lista-categorias" class="categorias-dropdown"></div>
+          </div>
+
+          <div class="menu-endereco-container">
+            <button id="btn-endereco" class="nav-btn">
+              <span>Cidades</span>
+              <img
+                src="/assets/img/setinha-botao.png"
+                alt="Seta branca apontando para baixo"
+                class="setinha"
+              />
+            </button>
+
+            <div id="dropdown-endereco" class="dropdown-endereco">
+              <input
+                type="text"
+                id="input-busca-endereco"
+                placeholder="Buscar por cidade..."
+              />
+
+              <ul id="lista-endereco"></ul>
+            </div>
+          </div>
+          <div class="menu-lojas-container">
+            <button id="btn-lojas" class="nav-btn">
+              <span>Lojas</span>
+              <img
+                src="/assets/img/setinha-botao.png"
+                alt="Seta branca apontando para baixo"
+                class="setinha"
+              />
+            </button>
+
+            <div id="dropdown-lojas" class="dropdown-lojas">
+              <input
+                type="text"
+                id="input-busca-lojas"
+                placeholder="Buscar lojas..."
+              />
+
+              <ul id="lista-lojas"></ul>
+            </div>
+          </div>
+
+          <a class="links-directions" href="./cupons.html">
+            <button id="btn-cupons" class="nav-btn">
+              <span>Cupons</span>
+            </button>
+          </a>
+
+          <a class="links-directions" href="./descontos.html">
+            <button id="btn-descontos" class="nav-btn">
+              <span>Descontos</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h2 id="titulo-endereco">Lojas da cidade:</h2>
+
+      <div id="lista-lojas-endereco" class="grid-lojas"></div>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-section navigation-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="./cuponsSalvos.html">Cupons Salvos</a></li>
+            <li><a href="../pages/loginCliente.html">Login</a></li>
+            <li><a href="../pages/clienteOuLoja.html">Cadastrar-se</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section newsletter-contact">
+          <h4>Fale Conosco</h4>
+          <p>📍 Rua Jacitaba, 253, Bairro do Limoeiro - São Paulo/SP</p>
+          <p>
+            📧 <a href="mailto:contato@devision.com">contato@devision.com</a>
+          </p>
+          <p>📞 (11) 3291-0578</p>
+        </div>
+
+        <div>
+          <h4 style="margin-top: 15px">Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu e-mail" required />
+            <button type="submit">
+              <a href="../pages/clienteOuLoja.html">Inscrever-se</a>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 DeVision. Todos os direitos reservados.</p>
+        <div class="legal-links">
+          <a href="#">Política de Privacidade</a> |
+          <a href="#">Termos de Serviço</a> |
+          <a href="#">Troca e Devolução</a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="../scripts/lojaPorCategoria.js"></script>
+    <script type="module" src="../scripts/header.js"></script>
+  </body>
+</html>
