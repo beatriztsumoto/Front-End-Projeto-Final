@@ -12,13 +12,12 @@ async function carregarLojasPorCategoria() {
     `Lojas da categoria: ${categoria}`;
 
   try {
-    // Chama o endpoint correto do seu backend
     const response = await fetch(
       `http://localhost:3000/lojas?categoria=${encodeURIComponent(categoria)}`
     );
 
     const json = await response.json();
-    const lojas = json.lojas; // { status, success, lojas:[...] }
+    const lojas = json.lojas; 
 
     if (!lojas || lojas.length === 0) {
       document.getElementById("lista-lojas").innerHTML =
@@ -33,7 +32,7 @@ async function carregarLojasPorCategoria() {
   }
 }
 
-// Renderiza os cards
+// cards
 function exibirLojas(lojas) {
   const container = document.getElementById("lista-lojas-categoria");
 
@@ -63,5 +62,4 @@ function exibirLojas(lojas) {
   });
 }
 
-// Executa ao carregar a página
 carregarLojasPorCategoria();
