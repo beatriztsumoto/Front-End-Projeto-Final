@@ -1,19 +1,19 @@
-async function carregarLojasPorCategoria() {
+async function carregarLojasPorEndereco() {
   const params = new URLSearchParams(window.location.search);
-  const categoria = params.get("categoria");
+  const endereco = params.get("endereco");
 
-  if (!categoria) {
-    console.error("Nenhuma categoria informada na URL.");
+  if (!endereco) {
+    console.error("Nenhum endereco informado na URL.");
     return;
   }
 
   // Atualiza o título da página
-  document.getElementById("titulo-categoria").textContent =
-    `Lojas da categoria: ${categoria}`;
+  document.getElementById("titulo-endereco").textContent =
+    `Lojas do endereco: ${endereco}`;
 
   try {
     const response = await fetch(
-      `http://localhost:3000/lojas?categoria=${encodeURIComponent(categoria)}`
+      `http://localhost:3000/lojas?endereco=${encodeURIComponent(endereco)}`
     );
 
     const json = await response.json();
@@ -21,7 +21,7 @@ async function carregarLojasPorCategoria() {
 
     if (!lojas || lojas.length === 0) {
       document.getElementById("lista-lojas").innerHTML =
-        "<p>Nenhuma loja encontrada nessa categoria.</p>";
+        "<p>Nenhuma loja encontrada nesse endereco.</p>";
       return;
     }
 
@@ -34,7 +34,7 @@ async function carregarLojasPorCategoria() {
 
 // cards
 function exibirLojas(lojas) {
-  const container = document.getElementById("lista-lojas-categoria");
+  const container = document.getElementById("lista-lojas-endereco");
 
   if (!container) {
     console.error("Elemento #lista-lojas não encontrado no HTML.");
@@ -50,7 +50,7 @@ function exibirLojas(lojas) {
     card.innerHTML = `
       <img src="${loja.LOGO}" alt="${loja.NOME_FANTASIA}">
       <h3>${loja.NOME_FANTASIA}</h3>
-      <p>${loja.CATEGORIA}</p>
+      <p>${loja.ENDERECO ?? "Endereço não informado"}</p>
     `;
 
     // Vai para a página detalhes da loja
@@ -62,4 +62,4 @@ function exibirLojas(lojas) {
   });
 }
 
-carregarLojasPorCategoria();
+carregarLojasPorEndereco();

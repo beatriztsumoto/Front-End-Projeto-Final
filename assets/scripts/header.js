@@ -105,18 +105,18 @@ const dropdownEndereco = document.getElementById("dropdown-endereco");
 const listaEndereco = document.getElementById("lista-endereco");
 const inputBuscaEndereco = document.getElementById("input-busca-endereco");
 
-// 1. Abre/Fecha dropdown Endereço
+// Abre/Fecha dropdown Endereço
 btnEndereco.addEventListener("click", () => {
   dropdownEndereco.classList.toggle("show");
   if (dropdownEndereco.classList.contains("show")) {
     inputBuscaEndereco.value = "";
     listaEndereco.innerHTML =
-      "<li>Digite ao menos 3 caracteres do endereço...</li>"; // Aumentei para 3, é mais eficiente
+      "<li>Digite ao menos 3 caracteres do endereço...</li>"; 
     inputBuscaEndereco.focus();
   }
 });
 
-// 2. Buscar enquanto digita
+// Buscar enquanto digita
 inputBuscaEndereco.addEventListener("input", async () => {
   const termo = inputBuscaEndereco.value.trim();
 
@@ -128,14 +128,14 @@ inputBuscaEndereco.addEventListener("input", async () => {
 
   try {
     const lojas = await buscarLojasPorEndereco(termo);
-    preencherListaEnderecosUnicos(lojas); // 🎯 Mudança no nome da função para clareza
+    preencherListaEnderecosUnicos(lojas); 
   } catch (error) {
     console.error("Não há lojas nesse local:", error);
     listaEndereco.innerHTML = "<li>Não há lojas nesse local </li>";
   }
 });
 
-// 3. Função para preencher a lista de resultados (AGRUPANDO ENDEREÇOS ÚNICOS)
+// Função para preencher a lista de resultados 
 function preencherListaEnderecosUnicos(lojas) {
   listaEndereco.innerHTML = "";
 
@@ -153,7 +153,7 @@ function preencherListaEnderecosUnicos(lojas) {
     }
   });
 
-  // Iterar e criar um item de lista para CADA ENDEREÇO ÚNICO
+  // Iterar e criar um item de lista para cada endereco unico
   enderecosUnicos.forEach((enderecoUnico) => {
     const li = document.createElement("li");
     li.classList.add("endereco-item");
@@ -163,7 +163,7 @@ function preencherListaEnderecosUnicos(lojas) {
     li.dataset.enderecoCompleto = enderecoUnico;
 
     li.addEventListener("click", () => {
-      // Fecha o dropdown
+   
       dropdownEndereco.classList.remove("show");
 
       const lojasNoEndereco = lojas.filter(
@@ -173,6 +173,8 @@ function preencherListaEnderecosUnicos(lojas) {
       console.log(
         `Endereço selecionado. Total de lojas encontradas: ${lojasNoEndereco.length}`
       );
+
+      window.location.href = `/assets/pages/lojaPorEndereco.html?endereco=${encodeURIComponent(enderecoUnico)}`
     });
 
     listaEndereco.appendChild(li);
