@@ -50,7 +50,7 @@ function exibirLojas(lojas) {
     card.innerHTML = `
       <img src="${loja.LOGO}" alt="${loja.NOME_FANTASIA}">
       <h3>${loja.NOME_FANTASIA}</h3>
-      <p>${loja.ENDERECO ?? "Endereço não informado"}</p>
+      <p>${loja.CATEGORIA}</p>
     `;
 
     // Vai para a página detalhes da loja
