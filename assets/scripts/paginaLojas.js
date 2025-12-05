@@ -76,7 +76,7 @@ async function carregarDescontos(lojaId) {
     else if (index === 1) tag = `<div class="coupon-tag new">NOVO</div>`;
 
     const html = `
-            <div class="coupon-item">
+            <div class="coupon-item" data-id="${item.ID_DESCONTO}">
                 ${tag}
                 <div class="coupon-discount">
                     <img src="${item.FOTO_ITEM}" class="discount-image" alt="Produto">
@@ -97,7 +97,16 @@ async function carregarDescontos(lojaId) {
 
     grid.insertAdjacentHTML("beforeend", html);
   });
+
+
 }
+
+document.querySelectorAll(".coupon-item").forEach((el) => {
+  el.addEventListener("click", () => {
+    const id = el.dataset.id;
+    window.location.href = `/assets/pages/descontoId.html?id=${id}`;
+  });
+});
 
 carregarDescontos(idLoja);
 
@@ -125,18 +134,17 @@ async function carregarCupons(lojaId) {
     });
 
     const html = `
-            <div class="coupon-item">
+            <div class="coupon-item" data-id="${cupom.ID_CUPOM}">
                 ${tag}
 
-                <!-- QUADRADO AZUL: agora tem LOGO e TÍTULO DO CUPOM -->
                 <div class="coupon-container">
                     <img src="${loja.LOGO}" class="discount-logo" alt="Logo da loja">
                     <span class="discount-label">${cupom.TITULO}</span>
                 </div>
 
                 <div class="coupon-body">
-                    <h4>${cupom.CODIGO}</h4> <!-- Código do cupom -->
-                    <p>${cupom.DESCRICAO}</p> <!-- Descrição -->
+                    <h4>${cupom.CODIGO}</h4> 
+                    <p>${cupom.DESCRICAO}</p> 
                     <div class="coupon-validity">
                         <span>Válido até ${validadeFormatada}</span>
                     </div>
@@ -148,6 +156,13 @@ async function carregarCupons(lojaId) {
 
     grid.insertAdjacentHTML("beforeend", html);
   });
+
+  document.querySelectorAll(".coupon-item").forEach((el) => {
+  el.addEventListener("click", () => {
+    const id = el.dataset.id;
+    window.location.href = `/assets/pages/cupomId.html?id=${id}`;
+  });
+});
 }
 
 carregarCupons(idLoja);
