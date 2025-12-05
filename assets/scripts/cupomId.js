@@ -37,6 +37,7 @@ async function carregarCupom() {
     const container = document.getElementById("cupom");
   
     const validadeFormatada = new Date(c.VALIDADE).toLocaleDateString("pt-BR");
+    const dataInicioFormatado = new Date(c.DATA_INICIO).toLocaleDateString("pt-BR");
   
     container.innerHTML = `
       <div class="cupom-card">
@@ -56,6 +57,10 @@ async function carregarCupom() {
   
         <p class="validade">
           <strong>Validade:</strong> ${validadeFormatada}
+        </p>
+
+        <p class="validade">
+          <strong>Data Inicio:</strong> ${dataInicioFormatado}
         </p>
   
       </div>
