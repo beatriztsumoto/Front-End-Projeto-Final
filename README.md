@@ -33,12 +33,12 @@ Este repositório contém a implementação da interface Front-End do Projeto Fi
 ## 📄 Estrutura de pastas
 
 ```
-├ assets/
-├---── scripts/
-├---── img/
-├---── pages/
-├---── styles
-├ index.html
+├── assets/
+   ├── scripts/
+   ├── img/
+   ├── pages/
+   ├── styles
+├── index.html
 ```
 
 ## 👩‍💻 Devs
