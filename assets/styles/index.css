@@ -425,6 +425,20 @@ h2 {
   letter-spacing: 1px;
 }
 
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff0066 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 0, 102, 0.3);
+  animation: pulse 2s infinite;
+}
+
 .card-body {
   padding: 1.25rem 1rem;
   text-align: center;
@@ -438,6 +452,10 @@ h2 {
 .card img {
   max-width: 100px;
   height: auto;
+}
+
+.nome {
+  margin-bottom: 11px;
 }
 
 .titulo-card {
@@ -461,10 +479,10 @@ h2 {
   background-clip: text;
 }
 
-.codigo {
+.codigo-loja {
   width: 150px;
   margin-top: 15px;
-  background: linear-gradient(135deg, #ff6b9d 0%, #850496 100%);
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff0066 100%);
   color: white;
   padding: 6px 16px;
   border-radius: 25px;

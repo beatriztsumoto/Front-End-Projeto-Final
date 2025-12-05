@@ -48,15 +48,17 @@ async function carregarHome() {
       if (item.tipo === "cupom") {
         card.innerHTML = `
           <div class="card-header">
+          <span class="badge">top</span>
             <img src="${d.LOJA.LOGO}" alt="Logo da loja">
           </div>
 
           <div class="card-body">
+           <p class="nome">CUPOM</p>
             <p class="titulo-card">${d.TITULO}</p>
             <span class="cashback">${
               d.CASHBACK ? d.CASHBACK : "Sem cashback"
             }</span>
-            <p class="codigo">${d.CODIGO}</p>
+            <p class="codigo-loja">${d.CODIGO}</p>
           </div>
         `;
       }
@@ -64,14 +66,17 @@ async function carregarHome() {
       if (item.tipo === "desconto") {
         card.innerHTML = `
           <div class="card-header">
+          <span class="badge">top</span>
             <img src="${d.FOTO_ITEM}" class="desconto-img" alt="Imagem item">
           </div>
 
           <div class="card-body">
-            <p>${d.TITULO}</p>
-            <span class="valor-desconto">- R$ ${parseFloat(
+          <p class="nome">DESCONTO</p>
+            <p class ="titulo-card">${d.TITULO}</p>
+            <span class="cashback">- R$ ${parseFloat(
               d.VALOR_DESCONTO
             ).toFixed(2)}</span>
+            <p class = "codigo-loja">${d.LOJA.NOME_FANTASIA}</p>
           </div>
         `;
       }
