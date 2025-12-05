@@ -81,6 +81,10 @@ async function carregarHome() {
         `;
       }
 
+      card.addEventListener("click", () => {
+        window.location.href = `/assets/pages/paginaLojas.html?id=${d.LOJA.ID_LOJA}`;
+      });
+
       container.appendChild(card);
     });
   } catch (erro) {
