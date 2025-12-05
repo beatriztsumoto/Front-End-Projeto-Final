@@ -8,9 +8,9 @@ Este repositório contém a implementação da interface Front-End do Projeto Fi
 
 ## 🛠️ Tecnologias utilizadas
 
-- **CSS** (57.6%)
-- **HTML** (26.8%)
-- **JavaScript** (15.6%)
+- ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css&logoColor=white)
+- ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 ## ⚙️ Como executar localmente
 
