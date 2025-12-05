@@ -4,7 +4,7 @@ Parte de Front-End do Projeto Final do segundo semestre do curso de Desenvolvime
 
 ## 📚 Sobre o projeto
 
-Este repositório contém a implementação da interface Front-End do Projeto Final realizado no segundo semestre do curso técnico de Desenvolvimento de Sistemas. O objetivo do projeto é proporcionar uma experiência prática de desenvolvimento de aplicações web utilizando tecnologias modernas de front-end.
+Este repositório contém a implementação da interface Front-End do Projeto Final realizado no segundo semestre do curso técnico de Desenvolvimento de Sistemas. O objetivo do projeto é proporcionar uma experiência prática de desenvolvimento de aplicações web utilizando tecnologias modernas de Front-End.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -43,7 +43,7 @@ Este repositório contém a implementação da interface Front-End do Projeto Fi
 
 ## 👩‍💻 Devs
 
-(https://github.com/beatriztsumoto https://github.com/vboehm09 https://github.com/juliadegrava https://github.com/NathaliaNascimentoReis https://github.com/Melfreitass https://github.com/PedrohBrito)
+(https://github.com/beatriztsumoto), (https://github.com/vboehm09), (https://github.com/juliadegrava), (https://github.com/NathaliaNascimentoReis), (https://github.com/Melfreitass), (https://github.com/PedrohBrito)
 
 ---
 
