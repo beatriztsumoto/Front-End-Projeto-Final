@@ -95,11 +95,14 @@ async function carregarCuponsComFiltro(dataInicio) {
 }
 
 const params = new URLSearchParams(window.location.search);
-const dataFiltro = params.get("data_inicio_filtro"); 
+const dataFiltro = params.get("data_inicio_filtro");
+const tituloPagina = document.getElementById("titulo-cupons");
 
 if (dataFiltro) {
+  tituloPagina.textContent = `Cupons com início a partir de: ${dataFiltro}`;
   console.log("Filtro de data detectado:", dataFiltro);
   carregarCuponsComFiltro(dataFiltro);
 } else {
+  tituloPagina.textContent = "Cupons";
   carregarCupons();
 }
