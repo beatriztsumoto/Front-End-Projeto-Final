@@ -44,9 +44,9 @@ async function carregarDescontos() {
       `;
 
       card.addEventListener("click", () => {
-        window.location.href = `/assets/pages/paginaLojas.html?id=${d.LOJA.ID_LOJA}`;
+        window.location.href = `/assets/pages/descontoId.html?id=${d.ID_DESCONTO}`;
       });
-
+      
       containerDescontos.appendChild(card);
     });
   } catch (erro) {
