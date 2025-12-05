@@ -38,6 +38,10 @@ async function carregarCupons() {
         </div>
       `;
 
+      card.addEventListener("click", () => {
+        window.location.href = `/assets/pages/paginaLojas.html?id=${cupom.LOJA.ID_LOJA}`;
+      });
+
       containerCupons.appendChild(card);
     });
   } catch (erro) {

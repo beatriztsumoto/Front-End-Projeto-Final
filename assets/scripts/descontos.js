@@ -43,6 +43,10 @@ async function carregarDescontos() {
         </div>
       `;
 
+      card.addEventListener("click", () => {
+        window.location.href = `/assets/pages/paginaLojas.html?id=${d.LOJA.ID_LOJA}`;
+      });
+
       containerDescontos.appendChild(card);
     });
   } catch (erro) {
