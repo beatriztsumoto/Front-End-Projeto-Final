@@ -43,12 +43,7 @@ Este repositório contém a implementação da interface Front-End do Projeto Fi
 
 ## 👩‍💻 Devs
 
-Beatriz Tsumoto
-Victor Boehm
-Nathalia Nascimento
-Pedro Brito
-Melissa Freitas
-Julia Degrava
+(https://github.com/beatriztsumoto https://github.com/vboehm09 https://github.com/juliadegrava https://github.com/NathaliaNascimentoReis https://github.com/Melfreitass https://github.com/PedrohBrito)
 
 ---
 
