@@ -39,7 +39,7 @@ async function carregarCupons() {
       `;
 
       card.addEventListener("click", () => {
-        window.location.href = `/assets/pages/paginaLojas.html?id=${cupom.LOJA.ID_LOJA}`;
+        window.location.href = `/assets/pages/cupomId.html?id=${cupom.ID_CUPOM}`;
       });
 
       containerCupons.appendChild(card);
