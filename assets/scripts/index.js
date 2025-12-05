@@ -52,10 +52,11 @@ async function carregarHome() {
           </div>
 
           <div class="card-body">
-            <p>${d.TITULO}</p>
+            <p class="titulo-card">${d.TITULO}</p>
             <span class="cashback">${
               d.CASHBACK ? d.CASHBACK : "Sem cashback"
             }</span>
+            <p class="codigo">${d.CODIGO}</p>
           </div>
         `;
       }
