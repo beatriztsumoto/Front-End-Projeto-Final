@@ -193,6 +193,31 @@ function removerRepetidosPorLoja(lista) {
   });
 }
 
+const inputDataInicio = document.getElementById("input-data-inicio");
+
+if (inputDataInicio) {
+  inputDataInicio.addEventListener("input", () => {
+    let valor = inputDataInicio.value.replace(/\D/g, "");
+
+    // Formatação automática AAAA/MM/DD
+    if (valor.length > 4 && valor.length <= 6) {
+      valor = valor.replace(/(\d{4})(\d{1,2})/, "$1/$2");
+    } else if (valor.length > 6) {
+      valor = valor.replace(/(\d{4})(\d{2})(\d{1,2})/, "$1-$2-$3");
+    }
+
+    inputDataInicio.value = valor;
+  });
+
+  inputDataInicio.addEventListener("change", () => {
+    const data = inputDataInicio.value.trim();
+    if (!data) return;
+
+    // Redireciona para página filtrada
+    window.location.href = `/assets/pages/cupons.html?data_inicio_filtro=${data}`;
+  });
+}
+
 // Carregar pesquisa de descontos por título e cupons por código e título em placeholder
 function redirecionarParaLoja(idLoja) {
   const urlRedirecionamento = `/assets/pages/paginaLojas.html?id=${idLoja}`;
