@@ -1,92 +1,73 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Descontaí - Login cliente</title>
-        <link rel="stylesheet" href="/assets/styles/loginCliente.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="logo-section">
-                <a href="/index.html">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descontaí - Login cliente</title>
+    <link rel="stylesheet" href="/assets/styles/loginCliente.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <a href="/index.html">
                 <div class="logo-icon">
                     <img src="/assets/img/logo.png" alt="logo">
-                    <link rel="stylesheet" href="/index.html">
-                    </a>
                 </div>
-                
-                <div class="logo-text">Descontaí</div>
+            </a>
+            <div class="logo-text">Descontaí</div>
+        </div>
 
-            </div>
-            <div class="form-card">
-                <h1 class="form-title">Login</h1>
-                
-                <form>
-                    <div class="input-group">
-                        <input type="text" placeholder="Usuário" required>
-                    </div>
-                    
-                    <div class="input-group">
-                        <input type="password" placeholder="Senha" required>
-                    </div>
+        <div class="form-card">
+            <h1 class="form-title">Login</h1>
 
-                    
-                    <div class="form-options">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="lembrar" checked>
-                            <label for="lembrar">Lembrar de mim</label>
-                        </div>
-                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Usuário" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Senha" required>
+                </div>
+
+                <div class="form-options">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="lembrar" checked>
+                        <label for="lembrar">Lembrar de mim</label>
                     </div>
-                    <div class="popup-overlay" id="popupOverlay">
-                        <div class="popup-content">
-                            <h2 class="popup-title">Recuperar Senha</h2>
-                            <p class="popup-text">
-                                Enviamos as instruções de mudança de senha para 
-                                <span class="popup-email">beatriz.tsumoto@gmail.com</span>. 
-                                Verifique sua caixa de entrada e de spam.
-                            </p>
-                            <button class="btn-ok" id="btnOk">OK</button>
-                        </div>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+
+                <div class="popup-overlay" id="popupOverlay">
+                    <div class="popup-content">
+                        <h2 class="popup-title">Recuperar Senha</h2>
+                        <p class="popup-text">
+                            Enviamos as instruções de mudança de senha para 
+                            <span class="popup-email">beatriz.tsumoto@gmail.com</span>. 
+                            Verifique sua caixa de entrada e de spam.
+                        </p>
+                        <button class="btn-ok" id="btnOk">OK</button>
                     </div>
-                        <a href="/index.html">
-                            <button class="btn-entrar">Entrar</button>
-                        </a>
-                    <div class="register-link">
-                        Não tem uma conta? <a href="/assets/pages/cadastroCliente.html">Cadastre-se</a>
-                    </div>
-                </form>
-            </div>
-            <div class="navigation-buttons">
-                <a href="/index.html">
-                    <button class="btn-voltar">Voltar</button>
-                </a>
-                <a href="/assets/pages/loginEmpresa.html">
-                    <button class="btn-loja">Sou loja</button>
-                </a>
-            </div>
+                </div>
+
+                <button type="submit" id="btnEntrar" class="btn-entrar">Entrar</button>
+
+                <div class="register-link">
+                    Não tem uma conta? <a href="/assets/pages/cadastroCliente.html">Cadastre-se</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="/index.html">
+                <button class="btn-voltar">Voltar</button>
+            </a>
+            <a href="/assets/pages/loginEmpresa.html">
+                <button class="btn-loja">Sou loja</button>
+            </a>
+        </div>
+    </div>
+    
+    <script type="module" src="/assets/scripts/loginCliente.js"></script>
+
     </body>
-    </html>
-
-    <script>
-        const esqueceuSenha = document.querySelector('.forgot-password');
-        const popupOverlay = document.getElementById('popupOverlay');
-        const btnOk = document.getElementById('btnOk');
-
-        esqueceuSenha.addEventListener('click', function(e) {
-            e.preventDefault();
-            popupOverlay.classList.add('active');
-        });
-
-        btnOk.addEventListener('click', function() {
-            popupOverlay.classList.remove('active');
-        });
-
-        popupOverlay.addEventListener('click', function(e) {
-            if (e.target === popupOverlay) {
-                popupOverlay.classList.remove('active');
-            }
-        });
-
-    </script>
+</html>

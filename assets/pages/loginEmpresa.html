@@ -8,25 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-section"><a href="/index.html">
-            <div class="logo-icon">
-                <img src="/assets/img/logo.png" alt="logo">
-                </a>
-            </div>
-            
-            <div class="logo-text">Descontaí</div>
+        <div class="logo-section">
+            <a href="/index.html">
+                <div class="logo-icon">
+                    <img src="/assets/img/logo.png" alt="logo">
+                </div>
+                <div class="logo-text">Descontaí</div>
             </a>
         </div>
+        
         <div class="form-card">
             <h1 class="form-title">Login de empresa</h1>
             
-            <form>
+            <form id="loginEmpresaForm">
                 <div class="input-group">
-                    <input type="text" placeholder="Nome fantasia" required>
+                    <input type="text" id="nomeFantasia" name="nomeFantasia" placeholder="Nome fantasia" required>
                 </div>
                 
                 <div class="input-group">
-                    <input type="password" placeholder="Senha" required>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
                 </div>
                 
                 <div class="form-options">
@@ -36,6 +36,7 @@
                     </div>
                     <a href="#" class="forgot-password">Esqueceu a senha?</a>
                 </div>
+                
                 <div class="popup-overlay" id="popupOverlay">
                     <div class="popup-content">
                         <h2 class="popup-title">Recuperar Senha</h2>
@@ -48,17 +49,16 @@
                     </div>
                 </div>
                 
-                <a href="/index.html"> 
-                    <button class="btn-entrar">Entrar</button>
-                </a> 
+                <button type="submit" class="btn-entrar">Entrar</button>
                 
                 <div class="register-link">
                     Não tem uma conta? <a href="/assets/pages/cadastroLoja.html">Cadastre-se</a>
                 </div>
             </form>
         </div>
+
         <div class="navigation-buttons">
-            <a href="../../index.html">
+            <a href="/index.html">
                 <button class="btn-voltar">Voltar</button>
             </a>
             <a href="/assets/pages/loginCliente.html">
@@ -66,27 +66,7 @@
             </a>
         </div>
     </div>
+
+    <script type="module" src="/assets/scripts/loginEmpresa.js"></script> 
 </body>
 </html>
-
-<script>
-    const esqueceuSenha = document.querySelector('.forgot-password');
-    const popupOverlay = document.getElementById('popupOverlay');
-    const btnOk = document.getElementById('btnOk');
-
-    esqueceuSenha.addEventListener('click', function(e) {
-        e.preventDefault();
-        popupOverlay.classList.add('active');
-    });
-
-    btnOk.addEventListener('click', function() {
-        popupOverlay.classList.remove('active');
-    });
-
-    popupOverlay.addEventListener('click', function(e) {
-        if (e.target === popupOverlay) {
-            popupOverlay.classList.remove('active');
-        }
-    });
-
-</script>
