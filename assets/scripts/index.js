@@ -82,8 +82,13 @@ async function carregarHome() {
       }
 
       card.addEventListener("click", () => {
-        window.location.href = `/assets/pages/paginaLojas.html?id=${d.LOJA.ID_LOJA}`;
+        if (item.tipo === "cupom") {
+          window.location.href = `/assets/pages/cupomId.html?id=${d.ID_CUPOM}`;
+        } else if (item.tipo === "desconto") {
+          window.location.href = `/assets/pages/descontoId.html?id=${d.ID_DESCONTO}`;
+        }
       });
+      
 
       container.appendChild(card);
     });
