@@ -15,11 +15,11 @@ Este repositório contém a implementação da interface Front-End do Projeto Fi
 ## ⚙️ Como executar localmente
 
 1. Clone o repositório:
-   ```bash
+   ```cmd
    git clone https://github.com/beatriztsumoto/Front-End-Projeto-Final.git
    ```
 2. Entre na pasta do projeto:
-   ```bash
+   ```cmd
    cd Front-End-Projeto-Final
    ```
 3. Abra o arquivo `index.html` em seu navegador preferido.
