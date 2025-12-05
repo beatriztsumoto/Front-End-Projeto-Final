@@ -33,6 +33,8 @@ async function carregarCupons() {
         <div class="card-body">
           <p>${cupom.TITULO}</p>
           <p class="cashback">${cupom.DESCRICAO}</p>
+          <p class="codigo">${cupom.CODIGO}</p>
+
         </div>
       `;
 

@@ -425,6 +425,20 @@ h2 {
   letter-spacing: 1px;
 }
 
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff0066 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 0, 102, 0.3);
+  animation: pulse 2s infinite;
+}
+
 .card-body {
   padding: 1.25rem 1rem;
   text-align: center;
@@ -432,6 +446,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .card img {
@@ -439,7 +454,11 @@ h2 {
   height: auto;
 }
 
-.card-body p {
+.nome {
+  margin-bottom: 11px;
+}
+
+.titulo-card {
   color: #555;
   font-size: 15px;
   margin-bottom: 1rem;
@@ -458,6 +477,18 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.codigo-loja {
+  width: 150px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff0066 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 0, 102, 0.3);
 }
 
 @media (max-width: 768px) {
