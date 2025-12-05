@@ -130,8 +130,6 @@ input:focus {
 
 .btn-voltar {
   position: relative;
-  bottom: -30px;
-  margin-left: -520px;
   padding: 15px 40px;
   background: var(--laranja-tangerina);
   border: none;
@@ -141,6 +139,7 @@ input:focus {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 4vh;
 }
 
 .btn-voltar:hover {

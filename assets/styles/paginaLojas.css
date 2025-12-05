@@ -964,6 +964,10 @@ main {
   box-shadow: 0 8px 28px rgba(139, 47, 201, 0.4);
 }
 
+#texto-voltar {
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   header {
     padding: 1.25rem;
