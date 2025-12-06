@@ -153,7 +153,7 @@ function preencherListaEnderecosUnicos(lojas) {
     }
   });
 
-  // Iterar e criar um item de lista para cada endereco unico
+  // Criar um item de lista para cada endereco unico
   enderecosUnicos.forEach((enderecoUnico) => {
     const li = document.createElement("li");
     li.classList.add("endereco-item");
@@ -193,6 +193,7 @@ function removerRepetidosPorLoja(lista) {
   });
 }
 
+// Filtro de cupons por data de início
 const inputDataInicio = document.getElementById("input-data-inicio");
 
 if (inputDataInicio) {
@@ -271,8 +272,7 @@ input.addEventListener("input", async () => {
     let cupons = [];
 
     if (resDescontos.ok) {
-      const jsonDescontos = await resDescontos.json();
-      descontos = jsonDescontos.data || [];
+      descontos = (await resDescontos.json()) || [];
     }
 
     if (resCupons.ok) {
