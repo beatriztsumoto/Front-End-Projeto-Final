@@ -991,6 +991,11 @@ main {
     text-align: center;
   }
 
+  #loja-title {
+    text-align: center;
+    margin: 1.5vh;
+  }
+
   .brand-stats {
     justify-content: center;
   }
@@ -1036,6 +1041,11 @@ main {
 
   .brand-hero-info h1 {
     font-size: 24px;
+  }
+
+  #loja-title {
+    text-align: center;
+    margin: 1.5vh;
   }
 
   .featured-card {
