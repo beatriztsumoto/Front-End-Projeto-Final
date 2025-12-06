@@ -221,7 +221,8 @@ input:focus {
   }
 
   .logo-icon img {
-    font-size: 50px;
+    width: 50px;
+    height: auto;
   }
 
   .navigation-buttons {
