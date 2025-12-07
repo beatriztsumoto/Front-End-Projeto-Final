@@ -420,6 +420,34 @@ span {
   transform: translateY(0);
 }
 
+.menu-data-container {
+  display: flex;
+  align-items: center;
+}
+
+#input-data-inicio {
+  width: 150px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #953bd2;  
+  color: #000;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  font-family: "alexandria";
+}
+
+#input-data-inicio::placeholder {
+  color: #fafafa;
+}
+
+#input-data-inicio:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
 main {
   max-width: 1400px;
   margin: 0 auto;
