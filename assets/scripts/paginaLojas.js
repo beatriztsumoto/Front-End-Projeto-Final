@@ -76,7 +76,7 @@ async function carregarDescontos(lojaId) {
     else if (index === 1) tag = `<div class="coupon-tag new">NOVO</div>`;
 
     const html = `
-            <div class="coupon-item" data-id="${item.ID_DESCONTO}">
+            <div class="coupon-item" data-id="${item.ID_DESCONTO}" data-type="desconto">
                 ${tag}
                 <div class="coupon-discount">
                     <img src="${item.FOTO_ITEM}" class="discount-image" alt="Produto">
@@ -100,13 +100,6 @@ async function carregarDescontos(lojaId) {
 
 
 }
-
-document.querySelectorAll(".coupon-item").forEach((el) => {
-  el.addEventListener("click", () => {
-    const id = el.dataset.id;
-    window.location.href = `/assets/pages/descontoId.html?id=${id}`;
-  });
-});
 
 carregarDescontos(idLoja);
 
@@ -134,7 +127,7 @@ async function carregarCupons(lojaId) {
     });
 
     const html = `
-            <div class="coupon-item" data-id="${cupom.ID_CUPOM}">
+            <div class="coupon-item" data-id="${cupom.ID_CUPOM}" data-type="cupom">
                 ${tag}
 
                 <div class="coupon-container">
@@ -157,12 +150,22 @@ async function carregarCupons(lojaId) {
     grid.insertAdjacentHTML("beforeend", html);
   });
 
-  document.querySelectorAll(".coupon-item").forEach((el) => {
-  el.addEventListener("click", () => {
-    const id = el.dataset.id;
-    window.location.href = `/assets/pages/cupomId.html?id=${id}`;
-  });
-});
 }
+
+document.addEventListener("click", (e) => {
+  const el = e.target.closest(".coupon-item");
+  if (!el) return;
+
+  const id = el.dataset.id;
+  const type = el.dataset.type;
+
+  if (type === "desconto") {
+    window.location.href = `/assets/pages/descontoId.html?id=${id}`;
+  }
+
+  if (type === "cupom") {
+    window.location.href = `/assets/pages/cupomId.html?id=${id}`;
+  }
+});
 
 carregarCupons(idLoja);
