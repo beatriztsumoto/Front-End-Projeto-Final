@@ -220,13 +220,6 @@ if (inputDataInicio) {
 }
 
 // Carregar pesquisa de descontos por título e cupons por código e título em placeholder
-function redirecionarParaLoja(idLoja) {
-  const urlRedirecionamento = `/assets/pages/paginaLojas.html?id=${idLoja}`;
-
-  dropdown.classList.remove("show");
-
-  window.location.href = urlRedirecionamento;
-}
 
 document.addEventListener("click", (event) => {
   if (!dropdown.contains(event.target) && event.target !== input) {
@@ -281,13 +274,13 @@ input.addEventListener("input", async () => {
 
     const resultadosMapeados = [
       ...descontos.map((d) => ({
-        idLoja: d.ID_LOJA,
-        tipo: "Desconto",
+        id: d.ID_DESCONTO,
+        tipo: "desconto",
         texto: d.TITULO,
       })),
       ...cupons.map((c) => ({
-        idLoja: c.ID_LOJA,
-        tipo: "Cupom",
+        id: c.ID_CUPOM,
+        tipo: "cupom",
         texto: `${c.TITULO} (${c.CODIGO})`,
       })),
     ];
@@ -318,7 +311,11 @@ function renderizarResultados(resultados) {
         `;
 
     item.addEventListener("click", () => {
-      redirecionarParaLoja(r.idLoja);
+      if (r.tipo === "cupom") {
+        window.location.href = `/assets/pages/cupomId.html?id=${r.id}`;
+      } else if (r.tipo === "desconto") {
+        window.location.href = `/assets/pages/descontoId.html?id=${r.id}`
+      }
     });
 
     listaResultadosBusca.appendChild(item);
