@@ -474,7 +474,7 @@ span {
     background: #ffffff;
     padding: 30px;
     border-radius: 18px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.521);
     width: 100%;
     text-align: center;
     animation: fadeIn 0.4s ease-in-out;
